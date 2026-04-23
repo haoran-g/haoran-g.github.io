@@ -1,24 +1,40 @@
 ---
 permalink: /
-title: "Haoran Geng"
+title: "About Me"
 author_profile: true
 redirect_from:
   - /about/
   - /about.html
 ---
 
-Hi, I am **Haoran Geng**, a Ph.D. candidate in Computer Science and Engineering at the University of Notre Dame, advised by Prof. Xiaobo Sharon Hu and Prof. Michael Niemier.
+I am a Ph.D. candidate in Computer Science and Engineering at the University of Notre Dame, advised by Prof. Xiaobo Sharon Hu and Prof. Michael Niemier.
 
-My research focuses on **cross-layer hardware design for efficient secure computing**, spanning secure memory architecture, processing-in-memory (PIM) systems, and device-level co-design for cryptographic workloads.
+My research focuses on **cross-layer hardware design for efficient secure computing**, aiming to bridge architecture, system, and device-level innovations to address the fundamental performance bottlenecks introduced by modern security mechanisms.
 
-I develop architectural, system-level, and hardware solutions to reduce the performance overhead of security mechanisms and enable practical secure computing at scale.
+I develop **architectural, system-level, and hardware solutions** to reduce data movement overhead, improve memory system efficiency, and enable practical deployment of secure computing in emerging workloads such as cloud computing and privacy-preserving machine learning.
+
+📧 **Contact:** [hgeng@nd.edu](mailto:hgeng@nd.edu)  
+📄 **CV:** [Download my CV](/files/Haoran_Geng_CV.pdf)
+
+---
 
 ## Research Interests
 
-- Computer Architecture and Systems
-- Secure Memory Architecture
-- Processing-in-Memory (PIM)
-- Hardware Security
+I conduct research in **Computer Architecture and High-Performance Systems**, with a focus on:
+
+- **Secure Memory Architecture**  
+  Designing next-generation secure memory systems that eliminate metadata overhead and improve performance while preserving strong security guarantees.
+
+- **Processing-in-Memory (PIM) for Secure Computing**  
+  Developing system-level architectures that integrate computation with memory to mitigate data movement bottlenecks in cryptographic and privacy-preserving workloads.
+
+- **Cross-layer System Design and Evaluation**  
+  Building analytical and system-level frameworks to understand when hardware and architectural optimizations translate to real end-to-end performance benefits.
+
+- **Hardware–Cryptography Co-design**  
+  Exploring device- and circuit-level optimizations (e.g., crossbar arrays, compute-in-memory fabrics) to accelerate cryptographic primitives such as homomorphic encryption.
+
+---
 
 ## Selected Publications
 
@@ -44,8 +60,4 @@ In *Proceedings of the IEEE/ACM International Conference on Computer-Aided Desig
 *IMCRYPTO: An In-Memory Computing Fabric for AES Encryption and Decryption.*  
 *IEEE Transactions on Very Large Scale Integration Systems (TVLSI)*, 2021.
 
-## Contact
-
-Email: [hgeng@nd.edu](mailto:hgeng@nd.edu)
-
-[Download CV](/files/Haoran_Geng_CV.pdf)
+---
