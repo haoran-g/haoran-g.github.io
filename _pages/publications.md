@@ -3,9 +3,6 @@ layout: single
 title: "Publications"
 permalink: /publications/
 ---
-
-## Publications
-
 ### Published and Accepted
 
 [1] **H. Geng**, X. Lu, Y. Che, Z. Tian, D. Cheng, X.-H. Sun, M. Niemier, X. Hu.  
