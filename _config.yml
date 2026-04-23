@@ -11,7 +11,7 @@ repository               : "haoran-g/haoran-g.github.io"
 
 # Author (Sidebar)
 author:
-  avatar           : "/images/profile.png"
+  avatar           : "profile.png"
   name             : "Haoran Geng"
   bio              : "Ph.D. Candidate in Computer Science and Engineering, University of Notre Dame"
   location         : "South Bend, IN"
