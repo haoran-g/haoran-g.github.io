@@ -20,19 +20,21 @@ I develop **architectural, system-level, and hardware solutions** to reduce data
 
 ## Research Interests
 
-I conduct research in **Computer Architecture and High-Performance Systems**, with a focus on:
+I conduct research in computer architecture and systems, focusing on **cross-layer hardware design for efficient secure computing**. My work addresses fundamental performance bottlenecks introduced by security mechanisms across the system stack, spanning architecture, system design, and device-level implementations.
+
+My research directions include:
 
 - **Secure Memory Architecture**  
   Designing next-generation secure memory systems that eliminate metadata overhead and improve performance while preserving strong security guarantees.
 
 - **Processing-in-Memory (PIM) for Secure Computing**  
-  Developing system-level architectures that integrate computation with memory to mitigate data movement bottlenecks in cryptographic and privacy-preserving workloads.
+  Developing system-level architectures that integrate computation with memory to reduce data movement overhead in cryptographic and privacy-preserving workloads.
 
 - **Cross-layer System Design and Evaluation**  
-  Building analytical and system-level frameworks to understand when hardware and architectural optimizations translate to real end-to-end performance benefits.
+  Building analytical frameworks and system-level models to understand when hardware and architectural optimizations translate into real end-to-end performance benefits.
 
 - **Hardware–Cryptography Co-design**  
-  Exploring device- and circuit-level optimizations (e.g., crossbar arrays, compute-in-memory fabrics) to accelerate cryptographic primitives such as homomorphic encryption.
+  Exploring device- and circuit-level techniques (e.g., crossbar arrays, compute-in-memory fabrics) to efficiently support emerging cryptographic workloads such as homomorphic encryption.
 
 ---
 
