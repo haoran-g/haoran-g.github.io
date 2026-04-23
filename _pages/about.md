@@ -13,7 +13,7 @@ My research focuses on **cross-layer hardware design for efficient secure comput
 
 I develop **architectural, system-level, and hardware solutions** to reduce data movement overhead, improve memory system efficiency, and enable practical deployment of secure computing in emerging workloads such as cloud computing and privacy-preserving machine learning.
 
-📧 **Contact:** [hgeng@nd.edu]
+📧 **Contact:** [hgeng@nd.edu](mailto:hgeng@nd.edu)  
 📄 **CV:** [Download my CV](/files/Haoran_Geng_CV.pdf)
 
 ---
