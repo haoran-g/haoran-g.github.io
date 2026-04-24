@@ -20,7 +20,7 @@ In *Proceedings of the 58th IEEE/ACM International Symposium on Microarchitectur
 *Shared-PIM: Enabling Concurrent Computation and Data Flow for Faster Processing-in-DRAM.*  
 *IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)*, 2025.  
 *(Co-first author)*  
-[[Paper]](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10979967)
+[[Paper]](https://arxiv.org/pdf/2408.15489)
 
 [4] M. Li, **H. Geng**, M. Niemier, X. Hu.  
 *Accelerating Polynomial Modular Multiplication with Crossbar-Based Compute-in-Memory.*  
