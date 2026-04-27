@@ -9,9 +9,9 @@ redirect_from:
 
 I am a Ph.D. candidate in Computer Science and Engineering at the University of Notre Dame, advised by Prof. Xiaobo Sharon Hu and Prof. Michael Niemier.
 
-My research focuses on **cross-layer hardware design for efficient secure computing**, aiming to bridge architecture, system, and device-level innovations to address the fundamental performance bottlenecks introduced by modern security mechanisms.
+My research focuses on **computer architecture for efficient secure computing**, where I develop architectural and system-level techniques to mitigate the performance overhead introduced by security mechanisms.
 
-I develop **architectural, system-level, and hardware solutions** to reduce data movement overhead, improve memory system efficiency, and enable practical deployment of secure computing in emerging workloads such as cloud computing and privacy-preserving machine learning.
+My work targets key bottlenecks in modern secure systems, including memory inefficiency and data movement overhead, and often leverages cross-layer design across architecture, system, and device levels to enable practical and high-performance secure computing in emerging applications such as cloud computing and privacy-preserving machine learning.
 
 📧 **Contact:** [hgeng@nd.edu](mailto:hgeng@nd.edu)  
 📄 **CV:** [Download my CV](/files/Haoran_Geng_CV.pdf)
@@ -20,21 +20,21 @@ I develop **architectural, system-level, and hardware solutions** to reduce data
 
 ## Research Interests
 
-I conduct research in computer architecture and systems, focusing on **cross-layer hardware design for efficient secure computing**. My work addresses fundamental performance bottlenecks introduced by security mechanisms across the system stack, spanning architecture, system design, and device-level implementations.
+I conduct research in **computer architecture and systems**, focusing on improving the efficiency of secure computing systems through architectural innovations.
 
 My research directions include:
 
 - **Secure Memory Architecture**  
-  Designing next-generation secure memory systems that eliminate metadata overhead and improve performance while preserving strong security guarantees.
+  Designing architectural solutions to reduce metadata overhead and improve the performance of secure memory systems while preserving strong security guarantees.
 
 - **Processing-in-Memory (PIM) for Secure Computing**  
-  Developing system-level architectures that integrate computation with memory to reduce data movement overhead in cryptographic and privacy-preserving workloads.
+  Developing architecture and system-level techniques to reduce data movement overhead in cryptographic and privacy-preserving workloads.
 
-- **Cross-layer System Design and Evaluation**  
-  Building analytical frameworks and system-level models to understand when hardware and architectural optimizations translate into real end-to-end performance benefits.
+- **Architecture and System-level Design for Secure Systems**  
+  Building models and frameworks to understand when architectural optimizations translate into real end-to-end performance benefits.
 
-- **Hardware–Cryptography Co-design**  
-  Exploring device- and circuit-level techniques (e.g., crossbar arrays, compute-in-memory fabrics) to efficiently support emerging cryptographic workloads such as homomorphic encryption.
+- **Hardware Support for Emerging Cryptography**  
+  Exploring device- and circuit-level techniques as supporting mechanisms to efficiently implement cryptographic workloads such as homomorphic encryption.
 
 ---
 
