@@ -1,9 +1,9 @@
----
-layout: single
-title: "Research"
-permalink: /research/
----
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cross-Layer Hardware Design for Efficient Secure Computing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
@@ -20,8 +20,8 @@ permalink: /research/
     --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
     --shadow-hover: 0 4px 12px rgba(0,0,0,0.10);
   }
-  .rp-wrap, .rp-wrap * { box-sizing: border-box; }
-  .rp-wrap { font-family: 'Source Sans 3', sans-serif; color: var(--text); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Source Sans 3', sans-serif; background: #f9f8f6; color: var(--text); min-height: 100vh; padding: 60px 24px 80px; }
 
   /* PAGE HEADER */
   .page-header { text-align: center; max-width: 720px; margin: 0 auto 52px; }
@@ -199,8 +199,8 @@ permalink: /research/
     .modal { padding: 24px 20px 20px; }
   }
 </style>
-
-<div class="rp-wrap">
+</head>
+<body>
 
 <header class="page-header">
   <h1>Cross-Layer Hardware Design for Efficient Secure Computing</h1>
@@ -424,8 +424,6 @@ permalink: /research/
     <div id="modal-body"></div>
   </div>
 </div>
-
-</div><!-- end .rp-wrap -->
 
 <script>
 const C = {
@@ -740,3 +738,5 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal(null, true);
 });
 </script>
+</body>
+</html>
