@@ -22,8 +22,13 @@ author_profile: true
   .proj-meta-line strong { color: var(--text); font-weight: 600; }
   .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
   .proj-section { margin-bottom: 32px; }
-  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
-  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-section-label { font-size: 20px; font-weight: 700; color: var(--accent); margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 2px; background: var(--gray-border); }
+  .proj-design-fig { margin: 24px 0 4px; }
+  .proj-design-fig-box { border: 2px dashed var(--gray-border); border-radius: 10px; padding: 56px 24px; display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--gray-text); background: var(--gray-bg); }
+  .proj-design-fig-box svg { width: 48px; height: 48px; opacity: 0.35; }
+  .proj-design-fig-box span { font-size: 13px; font-weight: 600; }
+  .proj-design-fig-caption { text-align: center; font-size: 13px; color: var(--text-muted); font-style: italic; margin: 10px 0 0; }
   .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
   .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
   .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
@@ -62,6 +67,13 @@ author_profile: true
 <div class="proj-section">
   <div class="proj-section-label">Design</div>
   <p class="proj-text">SSM departs entirely from counter-based encryption, replacing it with polynomial-based secret sharing (Shamir's Secret Sharing). Each 64-byte data block is encoded into a degree-N polynomial whose coefficients are the data segments, plus coefficient seeds for integrity. K shares (evaluation points of the polynomial) are distributed across DRAM. On each read, t shares are fetched to reconstruct the polynomial via Lagrange interpolation, while d = K−t extra decoy shares obfuscate the access pattern. On each write, shares are regenerated and remapped to new physical locations, providing freshness without version numbers. An SSM page table (encrypted and cached in a 512-entry SSM TLB) maps logical blocks to share locations.</p>
+  <div class="proj-design-fig">
+    <div class="proj-design-fig-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <span>Architecture Figure — Coming Soon</span>
+    </div>
+    <p class="proj-design-fig-caption">Fig. 1. Overall architecture of SSM, illustrating the polynomial-based secret sharing scheme, share distribution across DRAM, and the SSM data processing unit.</p>
+  </div>
 </div>
 
 <div class="proj-section">
