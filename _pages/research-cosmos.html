@@ -69,16 +69,14 @@ author_profile: true
   <div class="proj-section-label">Design</div>
   <p class="proj-text">COSMOS integrates two reinforcement learning (RL)-based predictors into the memory controller. The RL-based data location predictor determines whether requested data resides on-chip or off-chip after an L1 miss, enabling speculative CTR fetching for predicted off-chip accesses — removing cache-hierarchy latency from the critical path. The RL-based CTR locality predictor classifies CTRs as high- or low-locality, feeding a locality-centric replacement cache (LCR-CTR) that retains hot CTRs longer. Both predictors use tabular Q-learning with hardware-efficient lookup tables, adding only 147 KB of on-chip storage.</p>
   <div class="proj-design-fig">
-  <div style="border: 2px solid var(--gray-border); border-radius: 10px; overflow: hidden;">
-    <embed 
-      src="/files/COSMOS_overall.pdf" 
-      type="application/pdf" 
-      width="100%" 
-      height="500px">
-  </div>
+  <img 
+    src="/files/COSMOS_overall.png" 
+    alt="COSMOS architecture diagram"
+    style="width:100%; border-radius:10px; border: 1px solid var(--gray-border);"
+  >
   <p class="proj-design-fig-caption">
-    Fig. 1. RL designs of COSMOS: (left) RL-based data location prediction; (right) RL-based CTR locality prediction.
-    (<a href="/files/COSMOS_overall.pdf" target="_blank">Open PDF</a>)
+    Fig. 1. Overall architecture of COSMOS, showing the RL-based data location predictor and locality-centric CTR replacement cache in the memory controller.
+    (<a href="/files/COSMOS_overall.png" target="_blank">View full size</a>)
   </p>
 </div>
 
