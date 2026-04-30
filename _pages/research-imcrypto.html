@@ -58,7 +58,7 @@ author_profile: true
 <div class="proj-meta-line"><strong>Published in:</strong> IEEE Transactions on Very Large Scale Integration Systems (TVLSI), 2022</div>
 <div class="proj-meta-line"><strong>Authors:</strong> Dayane Reis, Haoran Geng, Michael Niemier, Xiaobo Sharon Hu</div>
 
-<hr class="proj-divider">
+<!-- <hr class="proj-divider"> -->
 
 <div class="proj-section">
   <div class="proj-section-label">Background</div>
@@ -69,12 +69,15 @@ author_profile: true
   <div class="proj-section-label">Design</div>
   <p class="proj-text">IMCRYPTO places the AES pipeline directly inside the SRAM arrays, at the level of the last-level cache (LLC). The design is built around three components: (1) Compute-Enabled Memory (CEM) arrays with custom sense amplifiers that perform XOR/AND/OR/ADD between memory words without reading data out; (2) a LUT fabric using 9T RA/CAM arrays (256×8) that combines SubBytes and MixColumns in a single step for encryption, and InvSubBytes + AddRoundKey + InvMixColumns for decryption; (3) a bidirectional shifter for ShiftRows. A RISC-V controller with 18 custom instructions coordinates the pipeline and enables programmability for multiple AES modes and other ciphers.</p>
   <div class="proj-design-fig">
-    <div class="proj-design-fig-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span>Architecture Figure — Coming Soon</span>
-    </div>
-    <p class="proj-design-fig-caption">Fig. 1. Overall architecture of IMCRYPTO, illustrating the in-SRAM AES pipeline with CEM arrays, LUT fabric, bidirectional shifter, and RISC-V controller.</p>
-  </div>
+  <img 
+    src="/files/IMCRYPTO.png" 
+    alt="IMCRYPTO architecture diagram"
+    style="width:100%; border-radius:10px; border: 1px solid var(--gray-border);"
+  >
+  <p class="proj-design-fig-caption">
+    Fig. 1. IMCRYPTO overall architexture (a) A high-level view of the \imcrypto accelerator, (b) with details of 1 LUT fabric module.
+    (<a href="/files/IMCRYPTO.png" target="_blank">View full size</a>)
+  </p>
 </div>
 
 <div class="proj-section">
@@ -102,7 +105,7 @@ author_profile: true
   <p class="proj-text">IMCRYPTO demonstrates that compute-in-memory is highly effective for AES because the algorithm's structure maps naturally onto LUT-based in-SRAM operations. The design serves as the foundation for PPIMCE, which extends the same fabric to support full HE and GC workloads.</p>
 </div>
 
-<hr class="proj-divider">
+<!-- <hr class="proj-divider"> -->
 
 <div class="proj-section">
   <div class="proj-section-label">Topics</div>

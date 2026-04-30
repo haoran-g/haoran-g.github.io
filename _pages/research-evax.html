@@ -57,7 +57,7 @@ author_profile: true
 <div class="proj-meta-line"><strong>Venue:</strong> Under Review — IEEE Transactions on Computer-Aided Design (TCAD)</div>
 <div class="proj-meta-line"><strong>Authors:</strong> Haoran Geng, Shaocong Wang, Mengyuan Li, Tomas Sousa Pereira, Michael Niemier, Xiaobo Sharon Hu</div>
 
-<hr class="proj-divider">
+<!-- <hr class="proj-divider"> -->
 
 <div class="proj-section">
   <div class="proj-section-label">Background</div>
@@ -68,12 +68,15 @@ author_profile: true
   <div class="proj-section-label">Design</div>
   <p class="proj-text">EvaX-Poly introduces an analytical noise evaluation model with three components: (1) derivation of SNRHE_min — the minimum SNR required for correct CKKS decryption as a function of polynomial degree N, ciphertext modulus q, and multiplicative depth; (2) modeling of hardware-induced XBA noise, including read noise (measured from a real 40 nm ReRAM array with 3000 repeated reads per cell across 8 conductance states) and ADC quantization noise, both modeled as zero-mean Gaussians; (3) analysis determining whether SNRCB ≥ SNRHE_min, and strategies (MSB/LSB bit-precision assignment) when the condition is not met.</p>
   <div class="proj-design-fig">
-    <div class="proj-design-fig-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span>Architecture Figure — Coming Soon</span>
-    </div>
-    <p class="proj-design-fig-caption">Fig. 1. Overall architecture of EvaX-Poly, depicting the three-component noise evaluation framework bridging ReRAM device characterization and CKKS cryptographic correctness requirements.</p>
-  </div>
+  <img 
+    src="/files/EVAX-poly.png" 
+    alt="EVAX-poly architecture diagram"
+    style="width:100%; border-radius:10px; border: 1px solid var(--gray-border);"
+  >
+  <p class="proj-design-fig-caption">
+    Fig. 1. EvaX-poly flowchart: (1) HE noise bounds, (2) XBA noise/SNR, (3) acceptable noise analysis.
+    (<a href="/files/EVAX-poly.png" target="_blank">View full size</a>)
+  </p>
 </div>
 
 <div class="proj-section">
@@ -101,7 +104,7 @@ author_profile: true
   <p class="proj-text">EvaX-Poly provides the first rigorous framework for determining whether a given XBA implementation can correctly execute HE workloads, closing the gap between device-level ReRAM characterization and cryptographic correctness requirements. Current 40 nm ReRAM devices already support practical CKKS workloads, with room for improvement as device technology advances.</p>
 </div>
 
-<hr class="proj-divider">
+<!-- <hr class="proj-divider"> -->
 
 <div class="proj-section">
   <div class="proj-section-label">Topics</div>

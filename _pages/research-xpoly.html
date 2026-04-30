@@ -58,7 +58,7 @@ author_profile: true
 <div class="proj-meta-line"><strong>Published in:</strong> IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2023</div>
 <div class="proj-meta-line"><strong>Authors:</strong> Mengyuan Li, Haoran Geng, Michael Niemier, Xiaobo Sharon Hu &nbsp;(Co-first author)</div>
 
-<hr class="proj-divider">
+<!-- <hr class="proj-divider"> -->
 
 <div class="proj-section">
   <div class="proj-section-label">Background</div>
@@ -69,12 +69,15 @@ author_profile: true
   <div class="proj-section-label">Design</div>
   <p class="proj-text">X-Poly identifies that Conv1D is the superior PMM algorithm for crossbar CIM. Three key insights motivate this: (1) NTT and Conv1D require the same XBA area, but Conv1D's end-to-end complexity on XBA is lower (O(1) vs. O(1)+O(n)+O(1) for NTT+element-mul+INTT); (2) Conv1D's repeated polynomial coefficients enable data reuse schemes unavailable to NTT; (3) Conv1D generates less cumulative noise since the entire computation completes in one XBA pass. X-Poly uses a hierarchical Tile→PE→XBA structure with a novel bit-mapping (BM) technique that groups same-bit weights across PEs, reducing shift-adders from 8 to 2 in a representative example.</p>
   <div class="proj-design-fig">
-    <div class="proj-design-fig-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span>Architecture Figure — Coming Soon</span>
-    </div>
-    <p class="proj-design-fig-caption">Fig. 1. Overall architecture of X-Poly, showing the hierarchical Tile→PE→XBA structure with the Conv1D mapping and bit-mapping technique for polynomial modular multiplication.</p>
-  </div>
+  <img 
+    src="/files/XPOLY.png" 
+    alt="XPOLY architecture diagram"
+    style="width:100%; border-radius:10px; border: 1px solid var(--gray-border);"
+  >
+  <p class="proj-design-fig-caption">
+    Fig. 1. Hierarchical structure of the proposed X-Poly design: (1) Tile level design and data mapping, (2) PE level design and data mapping, and (3) Crossbars structure.
+    (<a href="/files/XPOLY.png" target="_blank">View full size</a>)
+  </p>
 </div>
 
 <div class="proj-section">
@@ -102,7 +105,7 @@ author_profile: true
   <p class="proj-text">X-Poly challenges the prevailing assumption that NTT is the best approach for XBA-based PMM acceleration, showing that Conv1D offers a fundamentally better fit for the XBA computing paradigm. The work provides the hardware foundation for PPIMCE and EvaX-Poly.</p>
 </div>
 
-<hr class="proj-divider">
+<!-- <hr class="proj-divider"> -->
 
 <div class="proj-section">
   <div class="proj-section-label">Topics</div>
