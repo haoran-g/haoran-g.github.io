@@ -1,0 +1,108 @@
+---
+layout: single
+title: "COSMOS"
+permalink: /research/cosmos/
+author_profile: true
+---
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #1a56a4; --accent-light: #e8f0fb;
+    --gray-bg: #f5f5f3; --gray-border: #e0ddd8; --gray-text: #666560;
+    --text: #1a1916; --text-muted: #555350; --white: #ffffff;
+  }
+  .proj-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 28px; opacity: 0.8; }
+  .proj-back:hover { opacity: 1; text-decoration: none; color: var(--accent); }
+  .proj-back svg { width: 14px; height: 14px; }
+  .proj-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; background: var(--accent-light); color: var(--accent); }
+  .proj-name { font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 10px; }
+  .proj-full-title { font-family: 'Lora', serif; font-size: clamp(15px, 2vw, 19px); color: var(--text-muted); margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .proj-meta-line { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  .proj-meta-line strong { color: var(--text); font-weight: 600; }
+  .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
+  .proj-section { margin-bottom: 32px; }
+  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+  .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
+  .proj-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+  .proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .proj-stat { background: var(--gray-bg); border-radius: 8px; padding: 18px 12px; text-align: center; }
+  .proj-stat-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 6px; }
+  .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-paper-link { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; transition: opacity 0.15s; margin-top: 8px; }
+  .proj-paper-link:hover { opacity: 0.85; color: var(--white); text-decoration: none; }
+  .proj-paper-link svg { width: 16px; height: 16px; }
+  @media (max-width: 600px) {
+    .proj-kf-grid { grid-template-columns: 1fr; }
+    .proj-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<a class="proj-back" href="/research/">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Research Overview
+</a>
+
+<div class="proj-badge">Published · MICRO 2025</div>
+<div class="proj-name">COSMOS</div>
+<div class="proj-full-title">COSMOS: RL-Enhanced Locality-Aware Counter Cache Optimization for Secure Memory</div>
+<div class="proj-meta-line"><strong>Published in:</strong> 58th IEEE/ACM International Symposium on Microarchitecture (MICRO), 2025</div>
+<div class="proj-meta-line"><strong>Authors:</strong> Haoran Geng, Xiaoyang Lu, Yuezhi Che, Ziang Tian, Dazhao Cheng, Xian-He Sun, Michael Niemier, X. Sharon Hu</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Background</div>
+  <p class="proj-text">Secure memory systems using AES-CTR encryption face a critical performance challenge: each cache miss triggers additional DRAM accesses to fetch the encryption counter (CTR), leading to severe overhead — especially in workloads with irregular memory access patterns like graph algorithms, where CTR cache miss rates can reach 90%. Existing solutions such as MorphCtr improve CTR density, but even at a 1:128 CTR-to-data ratio, irregular workloads still suffer high miss rates because counters are only accessed after LLC misses, behaving effectively as an inefficient "L4" cache.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Design</div>
+  <p class="proj-text">COSMOS integrates two reinforcement learning (RL)-based predictors into the memory controller. The RL-based data location predictor determines whether requested data resides on-chip or off-chip after an L1 miss, enabling speculative CTR fetching for predicted off-chip accesses — removing cache-hierarchy latency from the critical path. The RL-based CTR locality predictor classifies CTRs as high- or low-locality, feeding a locality-centric replacement cache (LCR-CTR) that retains hot CTRs longer. Both predictors use tabular Q-learning with hardware-efficient lookup tables, adding only 147 KB of on-chip storage.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Key Features</div>
+  <div class="proj-kf-grid">
+    <div class="proj-kf-item"><strong>RL-based data location predictor</strong>Predicts on-chip vs. off-chip data after L1 miss for early CTR access</div>
+    <div class="proj-kf-item"><strong>LCR-CTR cache</strong>Locality-centric replacement policy guided by RL predictions</div>
+    <div class="proj-kf-item"><strong>SARSA-based online learning</strong>Adapts to changing access patterns without offline training</div>
+    <div class="proj-kf-item"><strong>Minimal hardware overhead</strong>Only 147 KB additional on-chip storage in the memory controller</div>
+  </div>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Results</div>
+  <div class="proj-stats">
+    <div class="proj-stat"><div class="proj-stat-num">25%</div><div class="proj-stat-label">speedup over MorphCtr</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">10%</div><div class="proj-stat-label">speedup over EMCC</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">85%</div><div class="proj-stat-label">RL prediction accuracy</div></div>
+  </div>
+  <p class="proj-text">COSMOS achieves 25% performance improvement over MorphCtr and 10% over EMCC for irregular memory workloads, while maintaining near-zero overhead on regular workloads. The data location predictor achieves ~85% accuracy across graph benchmarks, outperforming traditional pattern-based prefetchers that achieve less than 60% precision on irregular workloads.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Conclusion</div>
+  <p class="proj-text">COSMOS demonstrates that reinforcement learning can effectively address the irregular-access CTR cache problem without complex modifications to the cache hierarchy. By enabling earlier CTR access and smarter replacement decisions, COSMOS brings secure memory performance significantly closer to non-protected baselines.</p>
+</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Topics</div>
+  <div class="proj-tags">
+    <span class="proj-tag">Secure Memory</span>
+    <span class="proj-tag">Reinforcement Learning</span>
+    <span class="proj-tag">CTR Cache</span>
+    <span class="proj-tag">MICRO 2025</span>
+  </div>
+</div>
+
+<a class="proj-paper-link" href="https://dl.acm.org/doi/10.1145/3725843.3756047" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  Read Paper
+</a>

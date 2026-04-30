@@ -2,6 +2,7 @@
 layout: single
 title: "Research"
 permalink: /research/
+author_profile: false
 ---
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,10 +20,16 @@ permalink: /research/
     --shadow: 0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.05);
     --shadow-hover: 0 4px 12px rgba(0,0,0,0.10);
   }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  /* When embedded in a website, body padding should be 0 so the parent controls spacing */
-  body { font-family: 'Source Sans 3', sans-serif; background: transparent; color: var(--text); }
+  /* Expand content to full width — override Jekyll single layout column */
+  #main > article.page {
+    float: none !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
 
   /* PAGE HEADER */
   .page-header { text-align: center; margin: 0 auto 40px; }
@@ -32,10 +39,7 @@ permalink: /research/
   .accent-blue { color: var(--blue); }
   .accent-purple { color: var(--purple); }
 
-  /* ── MAIN GRID: left levels + right VIPER ──
-     Uses minmax so it shrinks gracefully in narrow containers.
-     VIPER column: min 220px, max 25% of available width.
-     Collapses to single column below 700px. */
+  /* ── MAIN GRID: left levels + right VIPER ── */
   .research-grid {
     width: 100%;
     display: grid;
@@ -48,10 +52,8 @@ permalink: /research/
     box-shadow: var(--shadow);
   }
 
-  /* Left column: stacks 3 level-sections */
   .levels-col { display: flex; flex-direction: column; min-width: 0; }
 
-  /* Each level section = label cell (fixed %) + projects (fluid) */
   .level-section {
     display: grid;
     grid-template-columns: minmax(140px, 22%) 1fr;
@@ -60,7 +62,6 @@ permalink: /research/
   }
   .level-section:last-child { border-bottom: none; }
 
-  /* Level label cell */
   .level-cell {
     padding: clamp(16px, 2vw, 28px) clamp(14px, 1.8vw, 22px);
     border-right: 1px solid var(--gray-border);
@@ -88,7 +89,6 @@ permalink: /research/
   .level-2 .level-icon { background: var(--green-light); } .level-2 .level-icon svg { stroke: var(--green); } .level-2 .level-num { color: var(--green); } .level-2 .level-title { color: var(--green); }
   .level-3 .level-icon { background: var(--red-light); } .level-3 .level-icon svg { stroke: var(--red); } .level-3 .level-num { color: var(--red); } .level-3 .level-title { color: var(--red); }
 
-  /* Projects area */
   .projects-area { padding: 0; min-width: 0; }
   .col-headers { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 1px solid var(--gray-border); background: var(--gray-bg); }
   .col-header { padding: 8px 12px; font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; display: flex; align-items: center; gap: 6px; }
@@ -99,7 +99,6 @@ permalink: /research/
   .project-col { padding: clamp(12px, 1.5vw, 18px) clamp(10px, 1.3vw, 16px); min-width: 0; }
   .project-col:first-child { border-right: 1px dashed var(--gray-border); }
 
-  /* Project cards */
   .project-card { background: var(--white); border: 1px solid var(--gray-border); border-radius: var(--card-radius); padding: clamp(12px, 1.4vw, 16px); display: flex; flex-direction: column; gap: 8px; transition: box-shadow 0.18s ease, transform 0.18s ease; cursor: pointer; height: 100%; }
   .project-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
   .project-card-header { display: flex; align-items: center; gap: 8px; }
@@ -108,13 +107,13 @@ permalink: /research/
   .project-meta { font-size: clamp(10px, 1.1vw, 11.5px); color: var(--gray-text); letter-spacing: 0.04em; }
   .project-desc { font-size: clamp(11px, 1.2vw, 12.5px); color: var(--text-muted); line-height: 1.6; }
 
-  .view-btn { display: inline-flex; align-items: center; gap: 5px; font-size: clamp(11px, 1.2vw, 12.5px); font-weight: 600; padding: 5px 11px; border-radius: 6px; border: 1.5px solid currentColor; background: transparent; cursor: pointer; transition: background 0.15s, color 0.15s; text-decoration: none; margin-top: auto; width: fit-content; }
+  .view-btn { display: inline-flex; align-items: center; gap: 5px; font-size: clamp(11px, 1.2vw, 12.5px); font-weight: 600; padding: 5px 11px; border-radius: 6px; border: 1.5px solid currentColor; background: transparent; cursor: pointer; transition: background 0.15s, color 0.15s; text-decoration: none !important; margin-top: auto; width: fit-content; }
   .view-btn svg { width: 11px; height: 11px; }
-  .btn-blue { color: var(--blue); } .btn-blue:hover { background: var(--blue-light); }
-  .btn-green { color: var(--green); } .btn-green:hover { background: var(--green-light); }
-  .btn-red { color: var(--red); } .btn-red:hover { background: var(--red-light); }
-  .btn-purple { color: var(--purple); } .btn-purple:hover { background: var(--purple-light); }
-  .btn-orange { color: var(--orange); } .btn-orange:hover { background: var(--orange-light); }
+  .btn-blue { color: var(--blue); } .btn-blue:hover { background: var(--blue-light); color: var(--blue); }
+  .btn-green { color: var(--green); } .btn-green:hover { background: var(--green-light); color: var(--green); }
+  .btn-red { color: var(--red); } .btn-red:hover { background: var(--red-light); color: var(--red); }
+  .btn-purple { color: var(--purple); } .btn-purple:hover { background: var(--purple-light); color: var(--purple); }
+  .btn-orange { color: var(--orange); } .btn-orange:hover { background: var(--orange-light); color: var(--orange); }
 
   .tag-badge { display: inline-flex; align-items: center; gap: 4px; font-size: 10px; padding: 3px 8px; border-radius: 20px; font-weight: 600; margin-top: 2px; width: fit-content; }
   .tag-green { background: var(--green-light); color: var(--green); }
@@ -156,41 +155,7 @@ permalink: /research/
   .connection-arrow-label { font-family: 'Lora', serif; font-size: 13px; font-weight: 700; margin-bottom: 6px; }
   .connection-text { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
 
-  /* ── MODAL ── */
-  .modal-overlay { position: fixed; inset: 0; background: rgba(20,18,14,0.55); backdrop-filter: blur(4px); z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 20px; opacity: 0; pointer-events: none; transition: opacity 0.2s; }
-  .modal-overlay.active { opacity: 1; pointer-events: all; }
-  .modal { background: var(--white); border-radius: 14px; max-width: 680px; width: 100%; padding: 36px 36px 28px; position: relative; transform: translateY(10px); transition: transform 0.2s; max-height: 88vh; overflow-y: auto; }
-  .modal-overlay.active .modal { transform: translateY(0); }
-  .modal-close { position: absolute; top: 16px; right: 16px; background: var(--gray-bg); border: 1px solid var(--gray-border); border-radius: 50%; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px; color: var(--text-muted); transition: background 0.15s; }
-  .modal-close:hover { background: var(--gray-border); }
-  .modal-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 12px; border-radius: 20px; margin-bottom: 14px; }
-  .modal-title { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; margin-bottom: 6px; line-height: 1.3; }
-  .modal-pub-line { font-size: 13.5px; color: var(--text-muted); margin-bottom: 4px; line-height: 1.6; }
-  .modal-pub-line strong { color: var(--text); font-weight: 600; }
-  .modal-divider { border: none; border-top: 1px solid var(--gray-border); margin: 20px 0; }
-  .modal-section { margin-bottom: 22px; }
-  .modal-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
-  .modal-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
-  .modal-text { font-size: 14.5px; color: var(--text-muted); line-height: 1.78; }
-  .modal-figure { background: var(--gray-bg); border: 1px dashed var(--gray-border); border-radius: 8px; padding: 28px 20px; text-align: center; margin: 14px 0; }
-  .modal-figure-icon { font-size: 28px; margin-bottom: 8px; }
-  .modal-figure-caption { font-size: 12px; color: var(--gray-text); margin-top: 8px; font-style: italic; }
-  .modal-keyfeatures { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-  .modal-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 12px 14px; font-size: 13px; color: var(--text-muted); line-height: 1.55; border-left: 3px solid; }
-  .modal-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 12px; margin-bottom: 3px; }
-  .modal-result-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
-  .modal-stat { background: var(--gray-bg); border-radius: 8px; padding: 14px 12px; text-align: center; }
-  .modal-stat-num { font-family: 'Lora', serif; font-size: 22px; font-weight: 700; line-height: 1.1; margin-bottom: 4px; }
-  .modal-stat-label { font-size: 11.5px; color: var(--gray-text); line-height: 1.4; }
-  .modal-paper-link { display: inline-flex; align-items: center; gap: 8px; background: var(--text); color: var(--white); text-decoration: none; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; transition: opacity 0.15s; margin-top: 4px; }
-  .modal-paper-link:hover { opacity: 0.85; }
-  .modal-paper-link svg { width: 16px; height: 16px; }
-  .modal-paper-note { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-light); color: var(--orange); padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600; margin-top: 4px; border: 1.5px solid var(--orange); }
-  .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
-  .modal-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; }
-
   @media (max-width: 800px) {
-    /* VIPER moves below levels at medium widths */
     .research-grid { grid-template-columns: 1fr; }
     .viper-col { grid-column: 1; grid-row: auto; border-left: none; border-top: 1px solid var(--gray-border); flex-direction: row; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
     .viper-col > * { flex: 1 1 200px; }
@@ -206,17 +171,11 @@ permalink: /research/
     .col-header:first-child { border-right: none; border-bottom: 1px dashed var(--gray-border); }
     .viper-col { flex-direction: column; }
     .connections-grid { grid-template-columns: 1fr 1fr; }
-    .modal-keyfeatures { grid-template-columns: 1fr; }
-    .modal-result-stats { grid-template-columns: 1fr 1fr; }
-    .modal { padding: 20px 16px 16px; }
   }
   @media (max-width: 420px) {
     .connections-grid { grid-template-columns: 1fr; }
-    .modal-result-stats { grid-template-columns: 1fr; }
   }
 </style>
-</head>
-<body>
 
 <header class="page-header">
   <h1>Cross-Layer Hardware Design for<br>Efficient Secure Computing</h1>
@@ -255,35 +214,35 @@ permalink: /research/
         </div>
         <div class="projects-row">
           <div class="project-col" style="display:flex;flex-direction:column;gap:14px;">
-            <div class="project-card" onclick="openModal('cosmos')">
+            <div class="project-card" onclick="window.location.href='/research/cosmos/'">
               <div class="project-card-header">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#1a56a4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(-30 12 12)"/><ellipse cx="12" cy="12" rx="10" ry="4.5" transform="rotate(30 12 12)"/></svg>
                 <span class="project-name accent-blue">COSMOS</span>
               </div>
               <div class="project-meta">2025 &nbsp;·&nbsp; MICRO</div>
               <p class="project-desc">RL-enhanced locality-aware counter cache optimization for secure memory systems.</p>
-              <button class="view-btn btn-blue" onclick="event.stopPropagation();openModal('cosmos')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+              <a class="view-btn btn-blue" href="/research/cosmos/" onclick="event.stopPropagation()">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
-            <div class="project-card" onclick="openModal('ssm')">
+            <div class="project-card" onclick="window.location.href='/research/ssm/'">
               <div class="project-card-header">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><circle cx="7" cy="9" r="1.2" fill="#1a7a4a" stroke="none"/><circle cx="17" cy="9" r="1.2" fill="#1a7a4a" stroke="none"/><circle cx="12" cy="14" r="1.2" fill="#1a7a4a" stroke="none"/><line x1="7" y1="9" x2="17" y2="9" stroke-dasharray="2 2" stroke-width="1" opacity="0.5"/><line x1="17" y1="9" x2="12" y2="14" stroke-dasharray="2 2" stroke-width="1" opacity="0.5"/></svg>
                 <span class="project-name" style="color:var(--green)">SSM</span>
               </div>
               <div class="project-meta">Under Review &nbsp;·&nbsp; MICRO 2026</div>
               <p class="project-desc">Secure Scattered Memory — high-performance protection via polynomial secret sharing.</p>
-              <button class="view-btn btn-green" onclick="event.stopPropagation();openModal('ssm')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+              <a class="view-btn btn-green" href="/research/ssm/" onclick="event.stopPropagation()">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
               <div class="continuous-tag">Continuous &amp; enhanced work based on COSMOS</div>
             </div>
           </div>
           <div class="project-col">
-            <div class="project-card" onclick="openModal('ppimce')">
+            <div class="project-card" onclick="window.location.href='/research/ppimce/'">
               <div class="project-card-header">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#5c3d9e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 5v7c0 5 3.5 9 8 10 4.5-1 8-5 8-10V5z"/><rect x="9" y="9" width="6" height="6" rx="1"/><line x1="9" y1="11.5" x2="7" y2="11.5"/><line x1="15" y1="11.5" x2="17" y2="11.5"/><line x1="11.5" y1="9" x2="11.5" y2="7"/><line x1="11.5" y1="15" x2="11.5" y2="17"/></svg>
                 <span class="project-name accent-purple">PPIMCE</span>
               </div>
               <div class="project-meta">2025 &nbsp;·&nbsp; JCST</div>
               <p class="project-desc">In-memory computing fabric for privacy-preserving computation with HE and Garbled Circuits.</p>
-              <button class="view-btn btn-purple" onclick="event.stopPropagation();openModal('ppimce')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+              <a class="view-btn btn-purple" href="/research/ppimce/" onclick="event.stopPropagation()">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </div>
         </div>
@@ -303,26 +262,26 @@ permalink: /research/
       <div class="projects-area">
         <div class="projects-row" style="padding-top:8px;">
           <div class="project-col">
-            <div class="project-card" onclick="openModal('imcrypto')">
+            <div class="project-card" onclick="window.location.href='/research/imcrypto/'">
               <div class="project-card-header">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#1a7a4a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/><circle cx="12" cy="16" r="1.5" fill="#1a7a4a" stroke="none"/><line x1="12" y1="17.5" x2="12" y2="19"/></svg>
                 <span class="project-name" style="color:var(--green)">IMCRYPTO</span>
               </div>
               <div class="project-meta">2022 &nbsp;·&nbsp; TVLSI</div>
               <p class="project-desc">In-memory computing fabric for AES encryption and decryption using SRAM arrays.</p>
-              <button class="view-btn btn-green" onclick="event.stopPropagation();openModal('imcrypto')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+              <a class="view-btn btn-green" href="/research/imcrypto/" onclick="event.stopPropagation()">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
               <div class="tag-badge tag-green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Uses SRAM technology</div>
             </div>
           </div>
           <div class="project-col">
-            <div class="project-card" onclick="openModal('xpoly')">
+            <div class="project-card" onclick="window.location.href='/research/xpoly/'">
               <div class="project-card-header">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#c45c1a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="8"/><rect x="9" y="8" width="6" height="8" rx="1"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="10" x2="9" y2="10"/><line x1="2" y1="14" x2="9" y2="14"/><line x1="2" y1="10" x2="2" y2="14"/><line x1="15" y1="12" x2="22" y2="12"/><circle cx="12" cy="12" r="1.2" fill="#c45c1a" stroke="none"/></svg>
                 <span class="project-name" style="color:var(--orange)">X-Poly</span>
               </div>
               <div class="project-meta">2023 &nbsp;·&nbsp; ICCAD</div>
               <p class="project-desc">Crossbar-based CIM accelerator for polynomial modular multiplication in lattice-based cryptography.</p>
-              <button class="view-btn btn-orange" onclick="event.stopPropagation();openModal('xpoly')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+              <a class="view-btn btn-orange" href="/research/xpoly/" onclick="event.stopPropagation()">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
               <div class="tag-badge tag-orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg> Uses ReRAM technology</div>
             </div>
           </div>
@@ -343,14 +302,14 @@ permalink: /research/
       <div class="projects-area">
         <div class="projects-row" style="padding-top:8px;">
           <div class="project-col" style="grid-column:1/-1;border-right:none;">
-            <div class="project-card" onclick="openModal('evax')" style="border-color:rgba(184,48,48,0.35);">
+            <div class="project-card" onclick="window.location.href='/research/evax-poly/'" style="border-color:rgba(184,48,48,0.35);">
               <div class="project-card-header">
                 <svg viewBox="0 0 24 24" fill="none" stroke="#b83030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 <span class="project-name" style="color:var(--red)">EvaX-Poly</span>
               </div>
               <div class="project-meta">Under Review &nbsp;·&nbsp; TCAD</div>
               <p class="project-desc">Noise-aware evaluation framework for homomorphic encryption on crossbar arrays — bridging device physics and crypto correctness.</p>
-              <button class="view-btn btn-red" onclick="event.stopPropagation();openModal('evax')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+              <a class="view-btn btn-red" href="/research/evax-poly/" onclick="event.stopPropagation()">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
             </div>
           </div>
         </div>
@@ -362,7 +321,7 @@ permalink: /research/
   <!-- ═══ RIGHT COLUMN: VIPER ═══ -->
   <div class="viper-col">
     <div class="viper-icon-bg">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:42px;height:42px;">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:36px;height:36px;">
         <path d="M6 18 C5 12 8 6 14 4 C18 2 22 2 24 2 C26 2 30 2 34 4 C40 6 43 12 42 18 C41 22 39 25 36 27 C33 29 30 30 28 31 L28 34 C28 35 27 36 26 36 L22 36 C21 36 20 35 20 34 L20 31 C18 30 15 29 12 27 C9 25 7 22 6 18Z" fill="var(--purple)"/>
         <path d="M16 28 C18 30 20 31 24 31 C28 31 30 30 32 28" stroke="var(--purple-light)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
         <ellipse cx="16" cy="14" rx="4.5" ry="3.8" fill="var(--purple-light)"/>
@@ -403,9 +362,9 @@ permalink: /research/
       <div><div class="cross-feature-title">Workload Characterization</div><p class="cross-feature-desc">Understanding real workloads and requirements</p></div>
     </div>
     <hr class="viper-divider">
-    <button class="view-btn btn-purple" style="width:100%;justify-content:center;" onclick="openModal('viper')">
+    <a class="view-btn btn-purple" style="width:100%;justify-content:center;" href="/research/viper/">
       View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px;"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </button>
+    </a>
   </div>
 
 </div><!-- end .research-grid -->
@@ -432,327 +391,3 @@ permalink: /research/
     </div>
   </div>
 </div>
-
-<!-- MODAL -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
-  <div class="modal" id="modal-content">
-    <button class="modal-close" onclick="closeModal(null, true)">✕</button>
-    <div id="modal-body"></div>
-  </div>
-</div>
-
-<script>
-const C = {
-  blue:   { color:'var(--blue)',   bg:'var(--blue-light)',   btn:'btn-blue' },
-  green:  { color:'var(--green)',  bg:'var(--green-light)',  btn:'btn-green' },
-  purple: { color:'var(--purple)', bg:'var(--purple-light)', btn:'btn-purple' },
-  orange: { color:'var(--orange)', bg:'var(--orange-light)', btn:'btn-orange' },
-  red:    { color:'var(--red)',    bg:'var(--red-light)',    btn:'btn-red' },
-};
-
-const projects = {
-
-  cosmos: {
-    ...C.blue,
-    name: "COSMOS",
-    fullTitle: "COSMOS: RL-Enhanced Locality-Aware Counter Cache Optimization for Secure Memory",
-    venue: "58th IEEE/ACM International Symposium on Microarchitecture (MICRO), 2025",
-    authors: "Haoran Geng, Xiaoyang Lu, Yuezhi Che, Ziang Tian, Dazhao Cheng, Xian-He Sun, Michael Niemier, X. Sharon Hu",
-    status: "published",
-    statusLabel: "Published · MICRO 2025",
-    background: "Secure memory systems using AES-CTR encryption face a critical performance challenge: each cache miss triggers additional DRAM accesses to fetch the encryption counter (CTR), leading to severe overhead — especially in workloads with irregular memory access patterns like graph algorithms, where CTR cache miss rates can reach 90%. Existing solutions such as MorphCtr improve CTR density, but even at a 1:128 CTR-to-data ratio, irregular workloads still suffer high miss rates because counters are only accessed after LLC misses, behaving effectively as an inefficient \"L4\" cache.",
-    design: "COSMOS integrates two reinforcement learning (RL)-based predictors into the memory controller. The RL-based data location predictor determines whether requested data resides on-chip or off-chip after an L1 miss, enabling speculative CTR fetching for predicted off-chip accesses — removing cache-hierarchy latency from the critical path. The RL-based CTR locality predictor classifies CTRs as high- or low-locality, feeding a locality-centric replacement cache (LCR-CTR) that retains hot CTRs longer. Both predictors use tabular Q-learning with hardware-efficient lookup tables, adding only 147 KB of on-chip storage.",
-    designFigureCaption: "COSMOS architecture: dual RL predictors with LCR-CTR cache in the memory controller",
-    keyFeatures: [
-      { title: "RL-based data location predictor", desc: "Predicts on-chip vs. off-chip data after L1 miss for early CTR access" },
-      { title: "LCR-CTR cache", desc: "Locality-centric replacement policy guided by RL predictions" },
-      { title: "SARSA-based online learning", desc: "Adapts to changing access patterns without offline training" },
-      { title: "Minimal hardware overhead", desc: "Only 147 KB additional on-chip storage in the memory controller" },
-    ],
-    results: "COSMOS achieves 25% performance improvement over MorphCtr and 10% over EMCC for irregular memory workloads, while maintaining near-zero overhead on regular workloads. The data location predictor achieves ~85% accuracy across graph benchmarks, outperforming traditional pattern-based prefetchers that achieve less than 60% precision on irregular workloads.",
-    resultFigureCaption: "Normalized performance comparison across graph and ML benchmarks",
-    stats: [
-      { num: "25%", label: "speedup over MorphCtr" },
-      { num: "10%", label: "speedup over EMCC" },
-      { num: "85%", label: "RL prediction accuracy" },
-    ],
-    conclusion: "COSMOS demonstrates that reinforcement learning can effectively address the irregular-access CTR cache problem without complex modifications to the cache hierarchy. By enabling earlier CTR access and smarter replacement decisions, COSMOS brings secure memory performance significantly closer to non-protected baselines.",
-    paperUrl: "https://dl.acm.org/doi/10.1145/3725843.3756047",
-    tags: ["Secure Memory", "Reinforcement Learning", "CTR Cache", "MICRO 2025"],
-  },
-
-  ssm: {
-    ...C.green,
-    name: "SSM",
-    fullTitle: "Secure Scattered Memory: High-Performance Memory Protection via Secret Sharing",
-    venue: "Under Review — IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026",
-    authors: "Haoran Geng et al.",
-    status: "review",
-    statusLabel: "Under Review · MICRO 2026",
-    background: "Existing secure memory schemes face a fundamental tension between security and performance. AES-XTS (used in Intel SGXv2 and AMD SEV) lacks integrity and replay protection. AES-CTR with MAC and Merkle Trees provides full protection but incurs ~30% performance overhead from repeated counter (VN) updates and multi-level Merkle Tree traversals — requiring ~20 additional DRAM accesses per verification for a 32 GB secure memory. All existing optimization efforts (MorphCtr, EMCC, RMCC, COSMOS) still operate within the counter-based paradigm, accepting the fundamental separation between data and security metadata.",
-    design: "SSM departs entirely from counter-based encryption, replacing it with polynomial-based secret sharing (Shamir's Secret Sharing). Each 64-byte data block is encoded into a degree-N polynomial whose coefficients are the data segments, plus coefficient seeds for integrity. K shares (evaluation points of the polynomial) are distributed across DRAM. On each read, t shares are fetched to reconstruct the polynomial via Lagrange interpolation, while d = K−t extra decoy shares obfuscate the access pattern. On each write, shares are regenerated and remapped to new physical locations, providing freshness without version numbers. An SSM page table (encrypted and cached in a 512-entry SSM TLB) maps logical blocks to share locations.",
-    designFigureCaption: "SSM architecture: polynomial generation, share distribution, and Lagrange reconstruction in the memory controller",
-    keyFeatures: [
-      { title: "No version numbers or Merkle Trees", desc: "Eliminates the primary overhead source of SGXv1-like schemes" },
-      { title: "Polynomial-based secret sharing", desc: "Degree-9 polynomial provides AES-256 equivalent security" },
-      { title: "Write-driven share remapping", desc: "Prevents replay attacks without explicit freshness counters" },
-      { title: "Locality-aware share placement", desc: "Consecutive blocks map to the same K physical share blocks, enabling high cache hit rates" },
-    ],
-    results: "SSM achieves only 10% and 8% performance overhead vs. AES-XTS and AES-GCM respectively, while providing full replay protection. It outperforms MorphCtr by up to 40% and surpasses EMCC/RMCC by 12% and COSMOS by 3% on graph benchmarks. The SSM data processing unit occupies 0.27 mm² and consumes 284.53 mW at 28nm.",
-    resultFigureCaption: "Normalized CPI comparison across secure memory schemes on graph and ML benchmarks",
-    stats: [
-      { num: "40%", label: "faster than MorphCtr" },
-      { num: "12%", label: "faster than EMCC/RMCC" },
-      { num: "10%", label: "overhead vs. AES-XTS" },
-    ],
-    conclusion: "SSM shows that the counter-based encryption paradigm is not the only path to full memory protection. By replacing metadata with intrinsic share-based security, SSM achieves near-AES-XTS performance while delivering the complete confidentiality, integrity, and freshness guarantees of SGXv1-like schemes.",
-    paperUrl: null,
-    tags: ["Secure Memory", "Secret Sharing", "Post-Quantum", "MICRO 2026"],
-  },
-
-  ppimce: {
-    ...C.purple,
-    name: "PPIMCE",
-    fullTitle: "PPIMCE: An In-Memory Computing Fabric for Privacy-Preserving Computing",
-    venue: "Journal of Computer Science and Technology (JCST), 2025",
-    authors: "Haoran Geng, Jianqiao Mo, Dayane Reis, Jonathan Takeshita, Taeho Jung, Brandon Reagen, Michael Niemier, Xiaobo Sharon Hu",
-    status: "published",
-    statusLabel: "Published · JCST 2025",
-    background: "Privacy-preserving machine learning (PPML) requires computing on encrypted data, which is 10,000×–100,000× slower than plaintext on GPUs. The dominant bottleneck in HE-only protocols is bootstrapping, which consumes over 95% of computation time. Combining Homomorphic Encryption (HE) for linear layers with Garbled Circuits (GC) for non-linear layers eliminates bootstrapping, but existing hardware accelerators target either HE or GC individually — not both. Adding a GC accelerator alongside a state-of-the-art HE ASIC like CraterLake (472 mm², 280W at 7nm) would be prohibitive in area and power, while inter-accelerator data movement would add further latency.",
-    design: "PPIMCE extends the IMCRYPTO in-SRAM computing architecture to a multi-core system that natively supports both HE and GC in a unified platform. The architecture consists of an IMC-Instruction Scheduler (IMC-IS) with a CAM-based data dependency checker and N IMC cores, each containing Compute-Enabled Memory (CEM) arrays, a LUT fabric for AES SubBytes/MixColumns and 4-bit integer multiplication, a bidirectional shifter, and a core controller with a micro-instruction memory. HE polynomial operations exploit SIMD parallelism across all cores; GC Half-Gate computations are parallelized across 16 GC Computing Units.",
-    designFigureCaption: "PPIMCE multi-core architecture with IMC-Instruction Scheduler and per-core IMC-PE layout",
-    keyFeatures: [
-      { title: "Unified HE + GC acceleration", desc: "First IMC accelerator supporting all operations for both protocols" },
-      { title: "8192-core SRAM IMC", desc: "Full SIMD parallelism for N=8192 polynomial degree" },
-      { title: "Bootstrapping-free PPML", desc: "GC handles non-linear layers, eliminating expensive HE bootstrapping" },
-      { title: "Compact area & power", desc: "138.3 mm² and 9.4 W at 5nm vs. CraterLake's 157 mm² and 114 W" },
-    ],
-    results: "PPIMCE achieves 107× speedup for GC benchmarks over CPU with 16 cores. For HE, it delivers 1500×–5000× speedup for addition, 100×–1500× for multiplication, and 110×–2000× for rotation vs. CPU, and up to 800× vs. GPU. For end-to-end PPML inference, PPIMCE is 1000× faster than Gazelle and achieves 12× speedup over CraterLake, with 91.9% accuracy on CIFAR-10 (ResNet-20) and 76.1% on ImageNet (ResNet-50).",
-    resultFigureCaption: "PPIMCE speedup over CPU/GPU for HE operations and end-to-end PPML inference comparison",
-    stats: [
-      { num: "1500×", label: "HE speedup vs. CPU" },
-      { num: "12×", label: "speedup over CraterLake" },
-      { num: "1000×", label: "speedup over Gazelle" },
-    ],
-    conclusion: "PPIMCE demonstrates that a single, compact in-SRAM computing fabric can replace the combination of a large HE ASIC and a separate GC accelerator, achieving superior performance with dramatically lower area and power. The unified design eliminates inter-accelerator data movement overhead that would otherwise dominate PPML inference latency.",
-    paperUrl: "https://link.springer.com/article/10.1007/s11390-025-5923-9",
-    tags: ["Homomorphic Encryption", "Garbled Circuits", "In-Memory Computing", "PPML", "JCST 2025"],
-  },
-
-  imcrypto: {
-    ...C.green,
-    name: "IMCRYPTO",
-    fullTitle: "IMCRYPTO: An In-Memory Computing Fabric for AES Encryption and Decryption",
-    venue: "IEEE Transactions on Very Large Scale Integration Systems (TVLSI), 2022",
-    authors: "Dayane Reis, Haoran Geng, Michael Niemier, Xiaobo Sharon Hu",
-    status: "published",
-    statusLabel: "Published · TVLSI 2022",
-    background: "AES encryption is the core of many security protocols, from TLS to Intel SGX memory protection. However, AES is fundamentally memory-bound: the SubBytes and MixColumns steps require table lookups that cause frequent cache misses, and moving data between memory and a dedicated co-processor dominates execution time. For 1 MB of plaintext, data transfer overhead adds 744.49 µs and 30.39 µJ — dwarfing the computation cost itself. Existing hardware accelerators achieve high throughput but require data to be transferred out of memory, exposing it on the memory bus and wasting bandwidth.",
-    design: "IMCRYPTO places the AES pipeline directly inside the SRAM arrays, at the level of the last-level cache (LLC). The design is built around three components: (1) Compute-Enabled Memory (CEM) arrays with custom sense amplifiers that perform XOR/AND/OR/ADD between memory words without reading data out; (2) a LUT fabric using 9T RA/CAM arrays (256×8) that combines SubBytes and MixColumns in a single step for encryption, and InvSubBytes + AddRoundKey + InvMixColumns for decryption; (3) a bidirectional shifter for ShiftRows. A RISC-V controller with 18 custom instructions coordinates the pipeline and enables programmability for multiple AES modes and other ciphers.",
-    designFigureCaption: "IMCRYPTO fabric: CEM arrays, LUT fabric with RA/CAM arrays, and bidirectional shifter integrated at the LLC level",
-    keyFeatures: [
-      { title: "Combined SubBytes + MixColumns", desc: "Single-step execution using pre-computed RA/CAM lookup tables" },
-      { title: "Unified encrypt/decrypt structure", desc: "CAM mode for InvSubBytes enables shared hardware for both operations" },
-      { title: "RISC-V programmability", desc: "Supports ECB, CBC, CTR, GCM modes and SHA-256 via custom ISA" },
-      { title: "No memory bus exposure", desc: "Ciphertext never leaves IMCRYPTO; plaintext sent only to trusted L1/L2" },
-    ],
-    results: "IMCRYPTO achieves minimum 3.3× and maximum 223.1× throughput-per-area improvement over prior AES ASICs and IMC architectures. When including data transfer overhead for ASIC designs, IMCRYPTO is 1.2× faster with 19.7× better area and 257.7× lower power than the best competing ASIC, and 5.7× better ADPP. Throughput per area reaches its peak against the PCM-based IMC design, with a projected 5.3× additional ADPP improvement using FeFET technology.",
-    resultFigureCaption: "Throughput, area, power, and ADPP comparison across ASIC and IMC designs for AES-128",
-    stats: [
-      { num: "223×", label: "max throughput/area improvement" },
-      { num: "257×", label: "lower power vs. best ASIC" },
-      { num: "1.67", label: "Tbps throughput in 0.079 mm²" },
-    ],
-    conclusion: "IMCRYPTO demonstrates that compute-in-memory is highly effective for AES because the algorithm's structure maps naturally onto LUT-based in-SRAM operations. The design serves as the foundation for PPIMCE, which extends the same fabric to support full HE and GC workloads.",
-    paperUrl: "https://www.computer.org/csdl/journal/si/2022/05/09737232/1BQieK1Z0xq",
-    tags: ["AES Encryption", "In-Memory Computing", "SRAM", "TVLSI 2022"],
-  },
-
-  xpoly: {
-    ...C.orange,
-    name: "X-Poly",
-    fullTitle: "Accelerating Polynomial Modular Multiplication with Crossbar-Based Compute-in-Memory",
-    venue: "IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2023",
-    authors: "Mengyuan Li, Haoran Geng, Michael Niemier, Xiaobo Sharon Hu  (Co-first author)",
-    status: "published",
-    statusLabel: "Published · ICCAD 2023",
-    background: "Polynomial Modular Multiplication (PMM) is the dominant computational bottleneck in lattice-based cryptography and Homomorphic Encryption (HE), accounting for over 50% of cloud-side HE workloads and over 90% on the edge. While Number Theoretic Transform (NTT) reduces PMM complexity from O(n²) to O(n log n), existing NTT-based crossbar array (XBA) accelerators suffer from large area costs due to twiddle factor storage and complex butterfly computation mappings. No systematic analysis existed comparing NTT vs. direct convolution approaches for XBA architectures.",
-    design: "X-Poly identifies that Conv1D is the superior PMM algorithm for crossbar CIM. Three key insights motivate this: (1) NTT and Conv1D require the same XBA area, but Conv1D's end-to-end complexity on XBA is lower (O(1) vs. O(1)+O(n)+O(1) for NTT+element-mul+INTT); (2) Conv1D's repeated polynomial coefficients enable data reuse schemes unavailable to NTT; (3) Conv1D generates less cumulative noise since the entire computation completes in one XBA pass. X-Poly uses a hierarchical Tile→PE→XBA structure with a novel bit-mapping (BM) technique that groups same-bit weights across PEs, reducing shift-adders from 8 to 2 in a representative example.",
-    designFigureCaption: "X-Poly hierarchical architecture: Tile (accumulator + reduction), PE (XBA arrays + adder tree + shifter), and bit mapping technique",
-    keyFeatures: [
-      { title: "Conv1D over NTT on XBAs", desc: "Lower end-to-end complexity and less noise than NTT-based designs" },
-      { title: "Novel bit-mapping technique", desc: "Reduces shift-adder area to 20% of conventional mapping" },
-      { title: "PE-level data reuse", desc: "Supports variable polynomial degrees with fixed XBA count" },
-      { title: "Barrett reduction variant", desc: "Pre-computed shift operations replace multiply/divide for modular reduction" },
-    ],
-    results: "X-Poly achieves 3.1×10⁶ PMM operations/s and 200× latency improvement over CPU. Compared to RMNTT (state-of-art XBA NTT accelerator), X-Poly achieves 3.9× better throughput per area by reducing shift-adder footprint by 80%. Against in-SRAM solutions, throughput improves by 11× with 3× better throughput/area.",
-    resultFigureCaption: "Throughput/area comparison with SOTA CIM accelerators across polynomial degrees and bitwidths",
-    stats: [
-      { num: "200×", label: "latency vs. CPU" },
-      { num: "3.9×", label: "throughput/area vs. RMNTT" },
-      { num: "11×", label: "throughput vs. in-SRAM" },
-    ],
-    conclusion: "X-Poly challenges the prevailing assumption that NTT is the best approach for XBA-based PMM acceleration, showing that Conv1D offers a fundamentally better fit for the XBA computing paradigm. The work provides the hardware foundation for PPIMCE and EvaX-Poly.",
-    paperUrl: "https://ieeexplore.ieee.org/abstract/document/10323790",
-    tags: ["Polynomial Multiplication", "Crossbar Arrays", "ReRAM", "Post-Quantum Crypto", "ICCAD 2023"],
-  },
-
-  evax: {
-    ...C.red,
-    name: "EvaX-Poly",
-    fullTitle: "Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays",
-    venue: "Under Review — IEEE Transactions on Computer-Aided Design (TCAD)",
-    authors: "Haoran Geng, Shaocong Wang, Mengyuan Li, Tomas Sousa Pereira, Michael Niemier, Xiaobo Sharon Hu",
-    status: "review",
-    statusLabel: "Under Review · TCAD",
-    background: "Crossbar arrays (XBAs) with ReRAM devices are promising accelerators for Polynomial Modular Multiplication (PMM) in CKKS-based HE, but they are an inherently lossy computing fabric. Device cycle-to-cycle conductance variations and ADC quantization errors introduce noise into every VMM computation. Crucially, CKKS encryption also intentionally adds noise as a security parameter — noise which accumulates through multiplications. No prior work had systematically studied whether XBA-induced noise is compatible with HE correctness requirements, or how to determine the maximum tolerable device noise level for a given HE configuration.",
-    design: "EvaX-Poly introduces an analytical noise evaluation model (EvaX-poly) with three components: (1) derivation of SNRHE_min — the minimum SNR required for correct CKKS decryption as a function of polynomial degree N, ciphertext modulus q, and multiplicative depth; (2) modeling of hardware-induced XBA noise, including read noise (measured from a real 40 nm ReRAM array with 3000 repeated reads per cell across 8 conductance states) and ADC quantization noise, both modeled as zero-mean Gaussians; (3) analysis determining whether SNRCB ≥ SNRHE_min, and strategies (MSB/LSB bit-precision assignment) when the condition is not met.",
-    designFigureCaption: "EvaX-poly flowchart: HE noise bounds → XBA noise modeling → SNR feasibility check with ReRAM measurement data",
-    keyFeatures: [
-      { title: "XBA noise can substitute HE noise", desc: "ReRAM read noise follows a quasi-Gaussian distribution compatible with CKKS encryption noise terms" },
-      { title: "SNR-based feasibility analysis", desc: "Systematic evaluation of whether a specific XBA implementation supports correct HE" },
-      { title: "MSB/LSB precision assignment", desc: "High-precision cells assigned to MSBs; noisy cells acceptable for LSBs" },
-      { title: "Validated against SEAL library", desc: "XBA-encrypted CKKS outputs match software reference within 0.03% average deviation" },
-    ],
-    results: "For 40 nm ReRAM devices (θ ≈ 0.05 at 31 µS), EvaX-Poly shows that CKKS operations at multiplicative depth 1–2 are feasible without any noise mitigation — covering federated learning and secure inference protocols (Gazelle, Delphi). The SNR crossover point occurs at θ ≈ 1.21×10⁻¹, with SNRCB degrading rapidly beyond this threshold. Multi-bit conductance mappings with low-noise state preference can extend viable depth.",
-    resultFigureCaption: "SNRCB vs. XBA noise factor θ and vs. multiplicative depth for measured 40nm ReRAM data",
-    stats: [
-      { num: "Depth 2", label: "CKKS supported by 40nm ReRAM" },
-      { num: "0.03%", label: "avg. deviation vs. SEAL" },
-      { num: "θ < 0.12", label: "noise tolerance threshold" },
-    ],
-    conclusion: "EvaX-Poly provides the first rigorous framework for determining whether a given XBA implementation can correctly execute HE workloads, closing the gap between device-level ReRAM characterization and cryptographic correctness requirements. Current 40 nm ReRAM devices already support practical CKKS workloads, with room for improvement as device technology advances.",
-    paperUrl: null,
-    tags: ["Homomorphic Encryption", "Crossbar Arrays", "Noise Analysis", "ReRAM", "CKKS", "TCAD"],
-  },
-
-  viper: {
-    ...C.purple,
-    name: "VIPER",
-    fullTitle: "VIPER: A System-Level Performance Model for Exploring Processing-in-Memory Designs",
-    venue: "Under Review — ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2027",
-    authors: "Haoran Geng et al.",
-    status: "review",
-    statusLabel: "Under Review · ASPLOS 2027",
-    background: "Processing-in-Memory (PIM) architectures promise to reduce data movement overhead by computing in or near memory, but evaluating whether a PIM design actually delivers system-level benefit is extremely difficult. Circuit- and array-level simulators miss full-system effects. Cycle-accurate gem5 simulations require 6–30 hours per configuration and significant engineering effort to extend. No existing tool covers both PNM (Processing Near Memory) and PUM (Processing Using Memory) paradigms under a unified, fast framework, leaving PIM designers without an efficient path to design-space exploration (DSE). Key cross-layer costs — data transfer overhead, NVM programming latency, capacity constraints, and non-offloadable host work — are invisible at the device level but fundamentally determine end-to-end performance.",
-    design: "VIPER builds on the classical Average Memory Access Time (AMAT) model, extending it with PIM-specific terms. For task-offloading, total execution time separates into CPU and PIM terms: PIM cost includes data transfer (t_in, t_out), array-to-PE movement (t_array for PNM), or NVM programming latency (t_prog for PUM), plus capacity partitioning overhead (⌈D_PIM/C_PIM⌉ multiplier). For data-triggered execution, t_DRAM in the AMAT equation is replaced by t_PIM,mem. CPU-side parameters are fixed by a single Linux perf profiling pass; PIM-side parameters are swept for DSE. VIPER completes a full sweep in under one minute.",
-    designFigureCaption: "VIPER flow: perf-based CPU profiling (fixed) + designer-swept PIM parameters → end-to-end execution time prediction",
-    keyFeatures: [
-      { title: "Unified PNM + PUM model", desc: "Single AMAT-extended framework covers both paradigms and both trigger models" },
-      { title: "Sub-minute DSE", desc: "Sweeps 400+ configurations in under a minute vs. 6–30 hours in gem5" },
-      { title: "Amdahl ceiling detection", desc: "Reveals non-offloadable host work as the binding constraint for many PIM designs" },
-      { title: "Capacity wall modeling", desc: "⌈D/C⌉ partitioning multiplier captures hard performance walls from PIM capacity limits" },
-    ],
-    results: "Validated against 400+ gem5-SALAM cycle-accurate simulation runs across diverse PIM configurations, benchmarks, and CPU types. VIPER achieves below 10% mean estimation error (97% of task-offloading points within ±10% envelope; Pearson r=0.995 for data-triggering). Case studies on UPMEM and IMCRYPTO reveal that fast in-cell computation alone does not guarantee speedup — transfer/dispatch overhead and capacity constraints dominate in practice.",
-    resultFigureCaption: "Predicted vs. simulated latency across 336 task-offloading configurations (log-log); ±10% error envelope",
-    stats: [
-      { num: "<10%", label: "mean prediction error" },
-      { num: "400+", label: "gem5 validation runs" },
-      { num: "<1 min", label: "vs. 6–30h in gem5" },
-    ],
-    conclusion: "VIPER provides PIM designers with a fast, accurate system-level tool that reveals cross-layer costs invisible at the device level — programming latency, capacity walls, and Amdahl ceilings — before committing to silicon. It is open-sourced to serve the broader PIM research community.",
-    paperUrl: null,
-    tags: ["PIM", "Design Space Exploration", "AMAT Model", "PNM", "PUM", "ASPLOS 2027"],
-  },
-};
-
-function fig(caption) {
-  return `<div class="modal-figure">
-    <div class="modal-figure-icon">📊</div>
-    <div style="font-size:13px;color:var(--gray-text);">[Figure placeholder]</div>
-    <div class="modal-figure-caption">${caption}</div>
-  </div>`;
-}
-
-function openModal(id) {
-  const p = projects[id];
-  if (!p) return;
-
-  const kfHtml = p.keyFeatures.map(kf =>
-    `<div class="modal-kf-item" style="border-color:${p.color};">
-      <strong>${kf.title}</strong>${kf.desc}
-    </div>`
-  ).join('');
-
-  const statsHtml = p.stats.map(s =>
-    `<div class="modal-stat">
-      <div class="modal-stat-num" style="color:${p.color};">${s.num}</div>
-      <div class="modal-stat-label">${s.label}</div>
-    </div>`
-  ).join('');
-
-  const tagsHtml = p.tags.map(t =>
-    `<span class="modal-tag" style="background:${p.bg};color:${p.color};">${t}</span>`
-  ).join('');
-
-  const paperBlock = p.paperUrl
-    ? `<a href="${p.paperUrl}" target="_blank" rel="noopener" class="modal-paper-link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-        Read Paper
-      </a>`
-    : `<div class="modal-paper-note">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        Paper under review — link will be added upon acceptance
-      </div>`;
-
-  document.getElementById('modal-body').innerHTML = `
-    <div class="modal-badge" style="background:${p.bg};color:${p.color};">${p.statusLabel}</div>
-    <div class="modal-title" style="color:${p.color};">${p.name}</div>
-    <div class="modal-pub-line"><strong>Full title:</strong> ${p.fullTitle}</div>
-    <div class="modal-pub-line"><strong>Published in:</strong> ${p.venue}</div>
-    <div class="modal-pub-line"><strong>Authors:</strong> ${p.authors}</div>
-    <hr class="modal-divider">
-
-    <div class="modal-section">
-      <div class="modal-section-label">Background</div>
-      <p class="modal-text">${p.background}</p>
-    </div>
-
-    <div class="modal-section">
-      <div class="modal-section-label">Design</div>
-      <p class="modal-text">${p.design}</p>
-      ${fig(p.designFigureCaption)}
-    </div>
-
-    <div class="modal-section">
-      <div class="modal-section-label">Key Features</div>
-      <div class="modal-keyfeatures">${kfHtml}</div>
-    </div>
-
-    <div class="modal-section">
-      <div class="modal-section-label">Results</div>
-      <div class="modal-result-stats">${statsHtml}</div>
-      <p class="modal-text" style="margin-top:12px;">${p.results}</p>
-      ${fig(p.resultFigureCaption)}
-    </div>
-
-    <div class="modal-section">
-      <div class="modal-section-label">Conclusion</div>
-      <p class="modal-text">${p.conclusion}</p>
-    </div>
-
-    <hr class="modal-divider">
-    <div class="modal-section">
-      <div class="modal-section-label">Topics</div>
-      <div class="modal-tags">${tagsHtml}</div>
-    </div>
-    <div style="margin-top:18px;">${paperBlock}</div>
-  `;
-
-  document.getElementById('modal-overlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeModal(e, force) {
-  if (force || (e && e.target === document.getElementById('modal-overlay'))) {
-    document.getElementById('modal-overlay').classList.remove('active');
-    document.body.style.overflow = '';
-  }
-}
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeModal(null, true);
-});
-</script>
-</body>
-</html>

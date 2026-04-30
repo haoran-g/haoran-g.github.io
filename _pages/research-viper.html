@@ -1,0 +1,109 @@
+---
+layout: single
+title: "VIPER"
+permalink: /research/viper/
+author_profile: true
+---
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #5c3d9e; --accent-light: #ede8f9;
+    --gray-bg: #f5f5f3; --gray-border: #e0ddd8; --gray-text: #666560;
+    --text: #1a1916; --text-muted: #555350; --white: #ffffff;
+    --orange: #c45c1a; --orange-light: #fdf0e6;
+  }
+  .proj-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 28px; opacity: 0.8; }
+  .proj-back:hover { opacity: 1; text-decoration: none; color: var(--accent); }
+  .proj-back svg { width: 14px; height: 14px; }
+  .proj-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; background: var(--accent-light); color: var(--accent); }
+  .proj-name { font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 10px; }
+  .proj-full-title { font-family: 'Lora', serif; font-size: clamp(15px, 2vw, 19px); color: var(--text-muted); margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .proj-meta-line { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  .proj-meta-line strong { color: var(--text); font-weight: 600; }
+  .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
+  .proj-section { margin-bottom: 32px; }
+  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+  .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
+  .proj-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+  .proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .proj-stat { background: var(--gray-bg); border-radius: 8px; padding: 18px 12px; text-align: center; }
+  .proj-stat-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 6px; }
+  .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-review-note { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-light); color: var(--orange); padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; margin-top: 8px; border: 1.5px solid var(--orange); }
+  @media (max-width: 600px) {
+    .proj-kf-grid { grid-template-columns: 1fr; }
+    .proj-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<a class="proj-back" href="/research/">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Research Overview
+</a>
+
+<div class="proj-badge">Under Review · ASPLOS 2027</div>
+<div class="proj-name">VIPER</div>
+<div class="proj-full-title">VIPER: A System-Level Performance Model for Exploring Processing-in-Memory Designs</div>
+<div class="proj-meta-line"><strong>Venue:</strong> Under Review — ACM International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS), 2027</div>
+<div class="proj-meta-line"><strong>Authors:</strong> Haoran Geng et al.</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Background</div>
+  <p class="proj-text">Processing-in-Memory (PIM) architectures promise to reduce data movement overhead by computing in or near memory, but evaluating whether a PIM design actually delivers system-level benefit is extremely difficult. Circuit- and array-level simulators miss full-system effects. Cycle-accurate gem5 simulations require 6–30 hours per configuration and significant engineering effort to extend. No existing tool covers both PNM (Processing Near Memory) and PUM (Processing Using Memory) paradigms under a unified, fast framework, leaving PIM designers without an efficient path to design-space exploration (DSE). Key cross-layer costs — data transfer overhead, NVM programming latency, capacity constraints, and non-offloadable host work — are invisible at the device level but fundamentally determine end-to-end performance.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Design</div>
+  <p class="proj-text">VIPER builds on the classical Average Memory Access Time (AMAT) model, extending it with PIM-specific terms. For task-offloading, total execution time separates into CPU and PIM terms: PIM cost includes data transfer (t_in, t_out), array-to-PE movement (t_array for PNM), or NVM programming latency (t_prog for PUM), plus capacity partitioning overhead (⌈D_PIM/C_PIM⌉ multiplier). For data-triggered execution, t_DRAM in the AMAT equation is replaced by t_PIM,mem. CPU-side parameters are fixed by a single Linux perf profiling pass; PIM-side parameters are swept for DSE. VIPER completes a full sweep in under one minute.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Key Features</div>
+  <div class="proj-kf-grid">
+    <div class="proj-kf-item"><strong>Unified PNM + PUM model</strong>Single AMAT-extended framework covers both paradigms and both trigger models</div>
+    <div class="proj-kf-item"><strong>Sub-minute DSE</strong>Sweeps 400+ configurations in under a minute vs. 6–30 hours in gem5</div>
+    <div class="proj-kf-item"><strong>Amdahl ceiling detection</strong>Reveals non-offloadable host work as the binding constraint for many PIM designs</div>
+    <div class="proj-kf-item"><strong>Capacity wall modeling</strong>⌈D/C⌉ partitioning multiplier captures hard performance walls from PIM capacity limits</div>
+  </div>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Results</div>
+  <div class="proj-stats">
+    <div class="proj-stat"><div class="proj-stat-num">&lt;10%</div><div class="proj-stat-label">mean prediction error</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">400+</div><div class="proj-stat-label">gem5 validation runs</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">&lt;1 min</div><div class="proj-stat-label">vs. 6–30h in gem5</div></div>
+  </div>
+  <p class="proj-text">Validated against 400+ gem5-SALAM cycle-accurate simulation runs across diverse PIM configurations, benchmarks, and CPU types. VIPER achieves below 10% mean estimation error (97% of task-offloading points within ±10% envelope; Pearson r=0.995 for data-triggering). Case studies on UPMEM and IMCRYPTO reveal that fast in-cell computation alone does not guarantee speedup — transfer/dispatch overhead and capacity constraints dominate in practice.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Conclusion</div>
+  <p class="proj-text">VIPER provides PIM designers with a fast, accurate system-level tool that reveals cross-layer costs invisible at the device level — programming latency, capacity walls, and Amdahl ceilings — before committing to silicon. It is open-sourced to serve the broader PIM research community.</p>
+</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Topics</div>
+  <div class="proj-tags">
+    <span class="proj-tag">PIM</span>
+    <span class="proj-tag">Design Space Exploration</span>
+    <span class="proj-tag">AMAT Model</span>
+    <span class="proj-tag">PNM</span>
+    <span class="proj-tag">PUM</span>
+    <span class="proj-tag">ASPLOS 2027</span>
+  </div>
+</div>
+
+<div class="proj-review-note">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  Paper under review — link will be added upon acceptance
+</div>

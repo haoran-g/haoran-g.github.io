@@ -1,0 +1,109 @@
+---
+layout: single
+title: "EvaX-Poly"
+permalink: /research/evax-poly/
+author_profile: true
+---
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #b83030; --accent-light: #faeaea;
+    --gray-bg: #f5f5f3; --gray-border: #e0ddd8; --gray-text: #666560;
+    --text: #1a1916; --text-muted: #555350; --white: #ffffff;
+    --orange: #c45c1a; --orange-light: #fdf0e6;
+  }
+  .proj-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 28px; opacity: 0.8; }
+  .proj-back:hover { opacity: 1; text-decoration: none; color: var(--accent); }
+  .proj-back svg { width: 14px; height: 14px; }
+  .proj-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; background: var(--accent-light); color: var(--accent); }
+  .proj-name { font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 10px; }
+  .proj-full-title { font-family: 'Lora', serif; font-size: clamp(15px, 2vw, 19px); color: var(--text-muted); margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .proj-meta-line { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  .proj-meta-line strong { color: var(--text); font-weight: 600; }
+  .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
+  .proj-section { margin-bottom: 32px; }
+  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+  .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
+  .proj-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+  .proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .proj-stat { background: var(--gray-bg); border-radius: 8px; padding: 18px 12px; text-align: center; }
+  .proj-stat-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 6px; }
+  .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-review-note { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-light); color: var(--orange); padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; margin-top: 8px; border: 1.5px solid var(--orange); }
+  @media (max-width: 600px) {
+    .proj-kf-grid { grid-template-columns: 1fr; }
+    .proj-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<a class="proj-back" href="/research/">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Research Overview
+</a>
+
+<div class="proj-badge">Under Review · TCAD</div>
+<div class="proj-name">EvaX-Poly</div>
+<div class="proj-full-title">Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</div>
+<div class="proj-meta-line"><strong>Venue:</strong> Under Review — IEEE Transactions on Computer-Aided Design (TCAD)</div>
+<div class="proj-meta-line"><strong>Authors:</strong> Haoran Geng, Shaocong Wang, Mengyuan Li, Tomas Sousa Pereira, Michael Niemier, Xiaobo Sharon Hu</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Background</div>
+  <p class="proj-text">Crossbar arrays (XBAs) with ReRAM devices are promising accelerators for Polynomial Modular Multiplication (PMM) in CKKS-based HE, but they are an inherently lossy computing fabric. Device cycle-to-cycle conductance variations and ADC quantization errors introduce noise into every VMM computation. Crucially, CKKS encryption also intentionally adds noise as a security parameter — noise which accumulates through multiplications. No prior work had systematically studied whether XBA-induced noise is compatible with HE correctness requirements, or how to determine the maximum tolerable device noise level for a given HE configuration.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Design</div>
+  <p class="proj-text">EvaX-Poly introduces an analytical noise evaluation model with three components: (1) derivation of SNRHE_min — the minimum SNR required for correct CKKS decryption as a function of polynomial degree N, ciphertext modulus q, and multiplicative depth; (2) modeling of hardware-induced XBA noise, including read noise (measured from a real 40 nm ReRAM array with 3000 repeated reads per cell across 8 conductance states) and ADC quantization noise, both modeled as zero-mean Gaussians; (3) analysis determining whether SNRCB ≥ SNRHE_min, and strategies (MSB/LSB bit-precision assignment) when the condition is not met.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Key Features</div>
+  <div class="proj-kf-grid">
+    <div class="proj-kf-item"><strong>XBA noise can substitute HE noise</strong>ReRAM read noise follows a quasi-Gaussian distribution compatible with CKKS encryption noise terms</div>
+    <div class="proj-kf-item"><strong>SNR-based feasibility analysis</strong>Systematic evaluation of whether a specific XBA implementation supports correct HE</div>
+    <div class="proj-kf-item"><strong>MSB/LSB precision assignment</strong>High-precision cells assigned to MSBs; noisy cells acceptable for LSBs</div>
+    <div class="proj-kf-item"><strong>Validated against SEAL library</strong>XBA-encrypted CKKS outputs match software reference within 0.03% average deviation</div>
+  </div>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Results</div>
+  <div class="proj-stats">
+    <div class="proj-stat"><div class="proj-stat-num">Depth 2</div><div class="proj-stat-label">CKKS supported by 40nm ReRAM</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">0.03%</div><div class="proj-stat-label">avg. deviation vs. SEAL</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">θ &lt; 0.12</div><div class="proj-stat-label">noise tolerance threshold</div></div>
+  </div>
+  <p class="proj-text">For 40 nm ReRAM devices (θ ≈ 0.05 at 31 µS), EvaX-Poly shows that CKKS operations at multiplicative depth 1–2 are feasible without any noise mitigation — covering federated learning and secure inference protocols (Gazelle, Delphi). The SNR crossover point occurs at θ ≈ 1.21×10⁻¹, with SNRCB degrading rapidly beyond this threshold. Multi-bit conductance mappings with low-noise state preference can extend viable depth.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Conclusion</div>
+  <p class="proj-text">EvaX-Poly provides the first rigorous framework for determining whether a given XBA implementation can correctly execute HE workloads, closing the gap between device-level ReRAM characterization and cryptographic correctness requirements. Current 40 nm ReRAM devices already support practical CKKS workloads, with room for improvement as device technology advances.</p>
+</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Topics</div>
+  <div class="proj-tags">
+    <span class="proj-tag">Homomorphic Encryption</span>
+    <span class="proj-tag">Crossbar Arrays</span>
+    <span class="proj-tag">Noise Analysis</span>
+    <span class="proj-tag">ReRAM</span>
+    <span class="proj-tag">CKKS</span>
+    <span class="proj-tag">TCAD</span>
+  </div>
+</div>
+
+<div class="proj-review-note">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  Paper under review — link will be added upon acceptance
+</div>

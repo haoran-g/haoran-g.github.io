@@ -1,0 +1,109 @@
+---
+layout: single
+title: "X-Poly"
+permalink: /research/xpoly/
+author_profile: true
+---
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #c45c1a; --accent-light: #fdf0e6;
+    --gray-bg: #f5f5f3; --gray-border: #e0ddd8; --gray-text: #666560;
+    --text: #1a1916; --text-muted: #555350; --white: #ffffff;
+  }
+  .proj-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 28px; opacity: 0.8; }
+  .proj-back:hover { opacity: 1; text-decoration: none; color: var(--accent); }
+  .proj-back svg { width: 14px; height: 14px; }
+  .proj-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; background: var(--accent-light); color: var(--accent); }
+  .proj-name { font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 10px; }
+  .proj-full-title { font-family: 'Lora', serif; font-size: clamp(15px, 2vw, 19px); color: var(--text-muted); margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .proj-meta-line { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  .proj-meta-line strong { color: var(--text); font-weight: 600; }
+  .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
+  .proj-section { margin-bottom: 32px; }
+  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+  .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
+  .proj-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+  .proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .proj-stat { background: var(--gray-bg); border-radius: 8px; padding: 18px 12px; text-align: center; }
+  .proj-stat-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 6px; }
+  .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-paper-link { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; transition: opacity 0.15s; margin-top: 8px; }
+  .proj-paper-link:hover { opacity: 0.85; color: var(--white); text-decoration: none; }
+  .proj-paper-link svg { width: 16px; height: 16px; }
+  @media (max-width: 600px) {
+    .proj-kf-grid { grid-template-columns: 1fr; }
+    .proj-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<a class="proj-back" href="/research/">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Research Overview
+</a>
+
+<div class="proj-badge">Published · ICCAD 2023</div>
+<div class="proj-name">X-Poly</div>
+<div class="proj-full-title">Accelerating Polynomial Modular Multiplication with Crossbar-Based Compute-in-Memory</div>
+<div class="proj-meta-line"><strong>Published in:</strong> IEEE/ACM International Conference on Computer-Aided Design (ICCAD), 2023</div>
+<div class="proj-meta-line"><strong>Authors:</strong> Mengyuan Li, Haoran Geng, Michael Niemier, Xiaobo Sharon Hu &nbsp;(Co-first author)</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Background</div>
+  <p class="proj-text">Polynomial Modular Multiplication (PMM) is the dominant computational bottleneck in lattice-based cryptography and Homomorphic Encryption (HE), accounting for over 50% of cloud-side HE workloads and over 90% on the edge. While Number Theoretic Transform (NTT) reduces PMM complexity from O(n²) to O(n log n), existing NTT-based crossbar array (XBA) accelerators suffer from large area costs due to twiddle factor storage and complex butterfly computation mappings. No systematic analysis existed comparing NTT vs. direct convolution approaches for XBA architectures.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Design</div>
+  <p class="proj-text">X-Poly identifies that Conv1D is the superior PMM algorithm for crossbar CIM. Three key insights motivate this: (1) NTT and Conv1D require the same XBA area, but Conv1D's end-to-end complexity on XBA is lower (O(1) vs. O(1)+O(n)+O(1) for NTT+element-mul+INTT); (2) Conv1D's repeated polynomial coefficients enable data reuse schemes unavailable to NTT; (3) Conv1D generates less cumulative noise since the entire computation completes in one XBA pass. X-Poly uses a hierarchical Tile→PE→XBA structure with a novel bit-mapping (BM) technique that groups same-bit weights across PEs, reducing shift-adders from 8 to 2 in a representative example.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Key Features</div>
+  <div class="proj-kf-grid">
+    <div class="proj-kf-item"><strong>Conv1D over NTT on XBAs</strong>Lower end-to-end complexity and less noise than NTT-based designs</div>
+    <div class="proj-kf-item"><strong>Novel bit-mapping technique</strong>Reduces shift-adder area to 20% of conventional mapping</div>
+    <div class="proj-kf-item"><strong>PE-level data reuse</strong>Supports variable polynomial degrees with fixed XBA count</div>
+    <div class="proj-kf-item"><strong>Barrett reduction variant</strong>Pre-computed shift operations replace multiply/divide for modular reduction</div>
+  </div>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Results</div>
+  <div class="proj-stats">
+    <div class="proj-stat"><div class="proj-stat-num">200×</div><div class="proj-stat-label">latency vs. CPU</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">3.9×</div><div class="proj-stat-label">throughput/area vs. RMNTT</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">11×</div><div class="proj-stat-label">throughput vs. in-SRAM</div></div>
+  </div>
+  <p class="proj-text">X-Poly achieves 3.1×10⁶ PMM operations/s and 200× latency improvement over CPU. Compared to RMNTT (state-of-art XBA NTT accelerator), X-Poly achieves 3.9× better throughput per area by reducing shift-adder footprint by 80%. Against in-SRAM solutions, throughput improves by 11× with 3× better throughput/area.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Conclusion</div>
+  <p class="proj-text">X-Poly challenges the prevailing assumption that NTT is the best approach for XBA-based PMM acceleration, showing that Conv1D offers a fundamentally better fit for the XBA computing paradigm. The work provides the hardware foundation for PPIMCE and EvaX-Poly.</p>
+</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Topics</div>
+  <div class="proj-tags">
+    <span class="proj-tag">Polynomial Multiplication</span>
+    <span class="proj-tag">Crossbar Arrays</span>
+    <span class="proj-tag">ReRAM</span>
+    <span class="proj-tag">Post-Quantum Crypto</span>
+    <span class="proj-tag">ICCAD 2023</span>
+  </div>
+</div>
+
+<a class="proj-paper-link" href="https://ieeexplore.ieee.org/abstract/document/10323790" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  Read Paper
+</a>

@@ -1,0 +1,107 @@
+---
+layout: single
+title: "SSM"
+permalink: /research/ssm/
+author_profile: true
+---
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #1a7a4a; --accent-light: #e6f4ec;
+    --gray-bg: #f5f5f3; --gray-border: #e0ddd8; --gray-text: #666560;
+    --text: #1a1916; --text-muted: #555350; --white: #ffffff;
+    --orange: #c45c1a; --orange-light: #fdf0e6;
+  }
+  .proj-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 28px; opacity: 0.8; }
+  .proj-back:hover { opacity: 1; text-decoration: none; color: var(--accent); }
+  .proj-back svg { width: 14px; height: 14px; }
+  .proj-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; background: var(--accent-light); color: var(--accent); }
+  .proj-name { font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 10px; }
+  .proj-full-title { font-family: 'Lora', serif; font-size: clamp(15px, 2vw, 19px); color: var(--text-muted); margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .proj-meta-line { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  .proj-meta-line strong { color: var(--text); font-weight: 600; }
+  .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
+  .proj-section { margin-bottom: 32px; }
+  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+  .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
+  .proj-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+  .proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .proj-stat { background: var(--gray-bg); border-radius: 8px; padding: 18px 12px; text-align: center; }
+  .proj-stat-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 6px; }
+  .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-review-note { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-light); color: var(--orange); padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; margin-top: 8px; border: 1.5px solid var(--orange); }
+  @media (max-width: 600px) {
+    .proj-kf-grid { grid-template-columns: 1fr; }
+    .proj-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<a class="proj-back" href="/research/">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Research Overview
+</a>
+
+<div class="proj-badge">Under Review · MICRO 2026</div>
+<div class="proj-name">SSM</div>
+<div class="proj-full-title">Secure Scattered Memory: High-Performance Memory Protection via Secret Sharing</div>
+<div class="proj-meta-line"><strong>Venue:</strong> Under Review — IEEE/ACM International Symposium on Microarchitecture (MICRO), 2026</div>
+<div class="proj-meta-line"><strong>Authors:</strong> Haoran Geng et al.</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Background</div>
+  <p class="proj-text">Existing secure memory schemes face a fundamental tension between security and performance. AES-XTS (used in Intel SGXv2 and AMD SEV) lacks integrity and replay protection. AES-CTR with MAC and Merkle Trees provides full protection but incurs ~30% performance overhead from repeated counter (VN) updates and multi-level Merkle Tree traversals — requiring ~20 additional DRAM accesses per verification for a 32 GB secure memory. All existing optimization efforts (MorphCtr, EMCC, RMCC, COSMOS) still operate within the counter-based paradigm, accepting the fundamental separation between data and security metadata.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Design</div>
+  <p class="proj-text">SSM departs entirely from counter-based encryption, replacing it with polynomial-based secret sharing (Shamir's Secret Sharing). Each 64-byte data block is encoded into a degree-N polynomial whose coefficients are the data segments, plus coefficient seeds for integrity. K shares (evaluation points of the polynomial) are distributed across DRAM. On each read, t shares are fetched to reconstruct the polynomial via Lagrange interpolation, while d = K−t extra decoy shares obfuscate the access pattern. On each write, shares are regenerated and remapped to new physical locations, providing freshness without version numbers. An SSM page table (encrypted and cached in a 512-entry SSM TLB) maps logical blocks to share locations.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Key Features</div>
+  <div class="proj-kf-grid">
+    <div class="proj-kf-item"><strong>No version numbers or Merkle Trees</strong>Eliminates the primary overhead source of SGXv1-like schemes</div>
+    <div class="proj-kf-item"><strong>Polynomial-based secret sharing</strong>Degree-9 polynomial provides AES-256 equivalent security</div>
+    <div class="proj-kf-item"><strong>Write-driven share remapping</strong>Prevents replay attacks without explicit freshness counters</div>
+    <div class="proj-kf-item"><strong>Locality-aware share placement</strong>Consecutive blocks map to the same K physical share blocks, enabling high cache hit rates</div>
+  </div>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Results</div>
+  <div class="proj-stats">
+    <div class="proj-stat"><div class="proj-stat-num">40%</div><div class="proj-stat-label">faster than MorphCtr</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">12%</div><div class="proj-stat-label">faster than EMCC/RMCC</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">10%</div><div class="proj-stat-label">overhead vs. AES-XTS</div></div>
+  </div>
+  <p class="proj-text">SSM achieves only 10% and 8% performance overhead vs. AES-XTS and AES-GCM respectively, while providing full replay protection. It outperforms MorphCtr by up to 40% and surpasses EMCC/RMCC by 12% and COSMOS by 3% on graph benchmarks. The SSM data processing unit occupies 0.27 mm² and consumes 284.53 mW at 28nm.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Conclusion</div>
+  <p class="proj-text">SSM shows that the counter-based encryption paradigm is not the only path to full memory protection. By replacing metadata with intrinsic share-based security, SSM achieves near-AES-XTS performance while delivering the complete confidentiality, integrity, and freshness guarantees of SGXv1-like schemes.</p>
+</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Topics</div>
+  <div class="proj-tags">
+    <span class="proj-tag">Secure Memory</span>
+    <span class="proj-tag">Secret Sharing</span>
+    <span class="proj-tag">Post-Quantum</span>
+    <span class="proj-tag">MICRO 2026</span>
+  </div>
+</div>
+
+<div class="proj-review-note">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+  Paper under review — link will be added upon acceptance
+</div>

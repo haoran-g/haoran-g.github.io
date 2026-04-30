@@ -1,0 +1,108 @@
+---
+layout: single
+title: "IMCRYPTO"
+permalink: /research/imcrypto/
+author_profile: true
+---
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #1a7a4a; --accent-light: #e6f4ec;
+    --gray-bg: #f5f5f3; --gray-border: #e0ddd8; --gray-text: #666560;
+    --text: #1a1916; --text-muted: #555350; --white: #ffffff;
+  }
+  .proj-back { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent); text-decoration: none; margin-bottom: 28px; opacity: 0.8; }
+  .proj-back:hover { opacity: 1; text-decoration: none; color: var(--accent); }
+  .proj-back svg { width: 14px; height: 14px; }
+  .proj-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; background: var(--accent-light); color: var(--accent); }
+  .proj-name { font-family: 'Lora', serif; font-size: clamp(32px, 5vw, 52px); font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 10px; }
+  .proj-full-title { font-family: 'Lora', serif; font-size: clamp(15px, 2vw, 19px); color: var(--text-muted); margin-bottom: 20px; font-weight: 400; line-height: 1.5; }
+  .proj-meta-line { font-size: 14px; color: var(--text-muted); margin-bottom: 6px; line-height: 1.6; }
+  .proj-meta-line strong { color: var(--text); font-weight: 600; }
+  .proj-divider { border: none; border-top: 1px solid var(--gray-border); margin: 28px 0; }
+  .proj-section { margin-bottom: 32px; }
+  .proj-section-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-text); margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .proj-section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-border); }
+  .proj-text { font-size: 15px; color: var(--text-muted); line-height: 1.8; margin: 0; }
+  .proj-kf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 4px; }
+  .proj-kf-item { background: var(--gray-bg); border-radius: 8px; padding: 14px 16px; font-size: 13.5px; color: var(--text-muted); line-height: 1.6; border-left: 3px solid var(--accent); }
+  .proj-kf-item strong { display: block; font-weight: 600; color: var(--text); font-size: 13px; margin-bottom: 4px; }
+  .proj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0; }
+  .proj-stat { background: var(--gray-bg); border-radius: 8px; padding: 18px 12px; text-align: center; }
+  .proj-stat-num { font-family: 'Lora', serif; font-size: 26px; font-weight: 700; color: var(--accent); line-height: 1.1; margin-bottom: 6px; }
+  .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
+  .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-paper-link { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; transition: opacity 0.15s; margin-top: 8px; }
+  .proj-paper-link:hover { opacity: 0.85; color: var(--white); text-decoration: none; }
+  .proj-paper-link svg { width: 16px; height: 16px; }
+  @media (max-width: 600px) {
+    .proj-kf-grid { grid-template-columns: 1fr; }
+    .proj-stats { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+
+<a class="proj-back" href="/research/">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  Research Overview
+</a>
+
+<div class="proj-badge">Published · TVLSI 2022</div>
+<div class="proj-name">IMCRYPTO</div>
+<div class="proj-full-title">IMCRYPTO: An In-Memory Computing Fabric for AES Encryption and Decryption</div>
+<div class="proj-meta-line"><strong>Published in:</strong> IEEE Transactions on Very Large Scale Integration Systems (TVLSI), 2022</div>
+<div class="proj-meta-line"><strong>Authors:</strong> Dayane Reis, Haoran Geng, Michael Niemier, Xiaobo Sharon Hu</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Background</div>
+  <p class="proj-text">AES encryption is the core of many security protocols, from TLS to Intel SGX memory protection. However, AES is fundamentally memory-bound: the SubBytes and MixColumns steps require table lookups that cause frequent cache misses, and moving data between memory and a dedicated co-processor dominates execution time. For 1 MB of plaintext, data transfer overhead adds 744.49 µs and 30.39 µJ — dwarfing the computation cost itself. Existing hardware accelerators achieve high throughput but require data to be transferred out of memory, exposing it on the memory bus and wasting bandwidth.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Design</div>
+  <p class="proj-text">IMCRYPTO places the AES pipeline directly inside the SRAM arrays, at the level of the last-level cache (LLC). The design is built around three components: (1) Compute-Enabled Memory (CEM) arrays with custom sense amplifiers that perform XOR/AND/OR/ADD between memory words without reading data out; (2) a LUT fabric using 9T RA/CAM arrays (256×8) that combines SubBytes and MixColumns in a single step for encryption, and InvSubBytes + AddRoundKey + InvMixColumns for decryption; (3) a bidirectional shifter for ShiftRows. A RISC-V controller with 18 custom instructions coordinates the pipeline and enables programmability for multiple AES modes and other ciphers.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Key Features</div>
+  <div class="proj-kf-grid">
+    <div class="proj-kf-item"><strong>Combined SubBytes + MixColumns</strong>Single-step execution using pre-computed RA/CAM lookup tables</div>
+    <div class="proj-kf-item"><strong>Unified encrypt/decrypt structure</strong>CAM mode for InvSubBytes enables shared hardware for both operations</div>
+    <div class="proj-kf-item"><strong>RISC-V programmability</strong>Supports ECB, CBC, CTR, GCM modes and SHA-256 via custom ISA</div>
+    <div class="proj-kf-item"><strong>No memory bus exposure</strong>Ciphertext never leaves IMCRYPTO; plaintext sent only to trusted L1/L2</div>
+  </div>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Results</div>
+  <div class="proj-stats">
+    <div class="proj-stat"><div class="proj-stat-num">223×</div><div class="proj-stat-label">max throughput/area improvement</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">257×</div><div class="proj-stat-label">lower power vs. best ASIC</div></div>
+    <div class="proj-stat"><div class="proj-stat-num">1.67</div><div class="proj-stat-label">Tbps throughput in 0.079 mm²</div></div>
+  </div>
+  <p class="proj-text">IMCRYPTO achieves minimum 3.3× and maximum 223.1× throughput-per-area improvement over prior AES ASICs and IMC architectures. When including data transfer overhead for ASIC designs, IMCRYPTO is 1.2× faster with 19.7× better area and 257.7× lower power than the best competing ASIC, and 5.7× better ADPP. Throughput per area reaches its peak against the PCM-based IMC design, with a projected 5.3× additional ADPP improvement using FeFET technology.</p>
+</div>
+
+<div class="proj-section">
+  <div class="proj-section-label">Conclusion</div>
+  <p class="proj-text">IMCRYPTO demonstrates that compute-in-memory is highly effective for AES because the algorithm's structure maps naturally onto LUT-based in-SRAM operations. The design serves as the foundation for PPIMCE, which extends the same fabric to support full HE and GC workloads.</p>
+</div>
+
+<hr class="proj-divider">
+
+<div class="proj-section">
+  <div class="proj-section-label">Topics</div>
+  <div class="proj-tags">
+    <span class="proj-tag">AES Encryption</span>
+    <span class="proj-tag">In-Memory Computing</span>
+    <span class="proj-tag">SRAM</span>
+    <span class="proj-tag">TVLSI 2022</span>
+  </div>
+</div>
+
+<a class="proj-paper-link" href="https://www.computer.org/csdl/journal/si/2022/05/09737232/1BQieK1Z0xq" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  Read Paper
+</a>
