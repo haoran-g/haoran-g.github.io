@@ -18,6 +18,30 @@ My work targets key bottlenecks in modern secure systems, including memory ineff
 
 ---
 
+## News
+
+<div style="margin: 1.25rem 0 2rem; padding: 1.15rem 1.35rem; border-left: 5px solid #5c3d9e; border-radius: 8px; background: rgba(92, 61, 158, 0.08);">
+  <strong>September 2026 — Paper accepted at IEEE TCAD!</strong><br>
+  Our paper, <em>Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</em>, has been accepted for publication in <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>. The paper will be available shortly after publication processing is complete.
+</div>
+
+---
+
+## Visitors Around the World
+
+<div style="margin: 1.25rem 0 2rem; padding: 1.25rem; border: 1px solid rgba(92, 61, 158, 0.25); border-radius: 10px; background: rgba(92, 61, 158, 0.04); text-align: center; overflow: hidden;">
+  <p style="margin-top: 0;">Explore where visitors to this website are joining from.</p>
+  <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=T8PWKzyD_KoFeHOyBBi6cCpuF7xr7LZiZ4pdZArD7HI&amp;cl=ffffff&amp;w=a"></script>
+  <noscript>
+    <a href="https://mapmyvisitors.com/web/1c80c" title="View website visitor statistics">
+      <img src="https://mapmyvisitors.com/map.png?d=T8PWKzyD_KoFeHOyBBi6cCpuF7xr7LZiZ4pdZArD7HI&amp;cl=ffffff" alt="Map showing approximate locations of website visitors" style="max-width: 100%; height: auto;">
+    </a>
+  </noscript>
+  <p style="margin: 0.9rem 0 0; font-size: 0.78em; color: #666;">This map uses IP-based geolocation to display approximate visitor locations; it does not display visitors' identities or precise locations.</p>
+</div>
+
+---
+
 ## Research Interests
 
 I conduct research in **computer architecture and systems**, focusing on improving the efficiency of secure computing systems through architectural innovations.

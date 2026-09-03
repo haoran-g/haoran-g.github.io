@@ -332,7 +332,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="#b83030" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
                 <span class="project-name" style="color:var(--red)">EvaX-Poly</span>
               </div>
-              <div class="project-meta">Under Review &nbsp;·&nbsp; TCAD</div>
+              <div class="project-meta">Accepted &nbsp;·&nbsp; IEEE TCAD</div>
               <p class="project-desc">Noise-aware evaluation framework for homomorphic encryption on crossbar arrays — bridging device physics and crypto correctness.</p>
               <button class="view-btn btn-red" onclick="event.stopPropagation();openModal('evax')">View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
             </div>
@@ -585,10 +585,10 @@ const projects = {
     ...C.red,
     name: "EvaX-Poly",
     fullTitle: "Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays",
-    venue: "Under Review — IEEE Transactions on Computer-Aided Design (TCAD)",
+    venue: "Accepted for publication in IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)",
     authors: "Haoran Geng, Shaocong Wang, Mengyuan Li, Tomas Sousa Pereira, Michael Niemier, Xiaobo Sharon Hu",
-    status: "review",
-    statusLabel: "Under Review · TCAD",
+    status: "accepted",
+    statusLabel: "Accepted · IEEE TCAD",
     background: "Crossbar arrays (XBAs) with ReRAM devices are promising accelerators for Polynomial Modular Multiplication (PMM) in CKKS-based HE, but they are an inherently lossy computing fabric. Device cycle-to-cycle conductance variations and ADC quantization errors introduce noise into every VMM computation. Crucially, CKKS encryption also intentionally adds noise as a security parameter — noise which accumulates through multiplications. No prior work had systematically studied whether XBA-induced noise is compatible with HE correctness requirements, or how to determine the maximum tolerable device noise level for a given HE configuration.",
     design: "EvaX-Poly introduces an analytical noise evaluation model (EvaX-poly) with three components: (1) derivation of SNRHE_min — the minimum SNR required for correct CKKS decryption as a function of polynomial degree N, ciphertext modulus q, and multiplicative depth; (2) modeling of hardware-induced XBA noise, including read noise (measured from a real 40 nm ReRAM array with 3000 repeated reads per cell across 8 conductance states) and ADC quantization noise, both modeled as zero-mean Gaussians; (3) analysis determining whether SNRCB ≥ SNRHE_min, and strategies (MSB/LSB bit-precision assignment) when the condition is not met.",
     designFigureCaption: "EvaX-poly flowchart: HE noise bounds → XBA noise modeling → SNR feasibility check with ReRAM measurement data",
@@ -676,7 +676,9 @@ function openModal(id) {
       </a>`
     : `<div class="modal-paper-note">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        Paper under review — link will be added upon acceptance
+        ${p.status === 'accepted'
+          ? 'Paper accepted — full text will be available shortly after publication processing'
+          : 'Paper under review — link will be added upon acceptance'}
       </div>`;
 
   document.getElementById('modal-body').innerHTML = `

@@ -33,19 +33,24 @@ In *Proceedings of the IEEE/ACM International Conference on Computer-Aided Desig
 *IEEE Transactions on Very Large Scale Integration Systems (TVLSI)*, 2021.  
 [[Paper]](https://www.computer.org/csdl/journal/si/2022/05/09737232/1BQieK1Z0xq)
 
+[6] **H. Geng**, S. Wang, M. Li, T. S. Pereira, M. Niemier, X. Hu.  
+*Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays.*  
+Accepted for publication in *IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)*.  
+*Paper available shortly.*
+
+[7] T. S. Pereira, R. Wang, I. Nwozo, **H. Geng**, X. Hu.  
+*Codebook-Based Acceleration for Ternary Language Model Inference.*  
+Accepted to appear in the *Proceedings of the IEEE/ACM International Symposium on Low Power Electronics and Design (ISLPED)*, 2026.
+
 ---
 
 ### Selected Manuscripts Under Review  
 *(First-author papers unless otherwise noted)*
 
-[6] **H. Geng**, Y. Che, D. Cheng, M. Niemier, X. Hu.  
+[8] **H. Geng**, Y. Che, D. Cheng, M. Niemier, X. Hu.  
 *Secure Scattered Memory: High-Performance Memory Protection via Secret Sharing.*  
 Submitted to *MICRO*, 2026.
 
-[7] **H. Geng**, T. S. Pereira, X. Lu, X.-H. Sun, M. Niemier, X. Hu.  
+[9] **H. Geng**, T. S. Pereira, X. Lu, X.-H. Sun, M. Niemier, X. Hu.  
 *VIPER: A System-Level Performance Model for Exploring Processing-in-Memory Designs.*  
 Submitted to *ASPLOS*, 2027.
-
-[8] **H. Geng**, S. Wang, M. Li, T. S. Pereira, M. Niemier, X. Hu.  
-*Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays.*  
-Under review at *IEEE TCAD*.
