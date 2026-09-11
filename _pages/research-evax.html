@@ -39,6 +39,9 @@ author_profile: true
   .proj-stat-label { font-size: 12px; color: var(--gray-text); line-height: 1.4; }
   .proj-tags { display: flex; flex-wrap: wrap; gap: 8px; }
   .proj-tag { font-size: 12px; padding: 4px 12px; border-radius: 20px; font-weight: 500; background: var(--accent-light); color: var(--accent); }
+  .proj-paper-link { display: inline-flex; align-items: center; gap: 8px; background: var(--accent); color: var(--white); text-decoration: none; padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; transition: opacity 0.15s; margin-top: 8px; }
+  .proj-paper-link:hover { opacity: 0.85; color: var(--white); text-decoration: none; }
+  .proj-paper-link svg { width: 16px; height: 16px; }
   .proj-review-note { display: inline-flex; align-items: center; gap: 8px; background: var(--orange-light); color: var(--orange); padding: 12px 24px; border-radius: 8px; font-size: 15px; font-weight: 600; margin-top: 8px; border: 1.5px solid var(--orange); }
   @media (max-width: 600px) {
     .proj-kf-grid { grid-template-columns: 1fr; }
@@ -51,7 +54,7 @@ author_profile: true
   Research Overview
 </a>
 
-<div class="proj-badge">TCAD 2026</div>
+<div class="proj-badge">Published · TCAD 2026</div>
 <div class="proj-name">EvaX-Poly</div>
 <div class="proj-full-title">Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</div>
 <div class="proj-meta-line"><strong>Venue:</strong> IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD), 2026</div>
@@ -118,7 +121,7 @@ author_profile: true
   </div>
 </div>
 
-<div class="proj-review-note">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-  Paper accepted — full text will be available shortly after publication processing
-</div>
+<a class="proj-paper-link" href="https://ieeexplore.ieee.org/document/11684822" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+  Read Paper
+</a>

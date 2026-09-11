@@ -21,8 +21,8 @@ My work targets key bottlenecks in modern secure systems, including memory ineff
 ## News
 
 <div style="margin: 1.25rem 0 2rem; padding: 1.15rem 1.35rem; border-left: 5px solid #5c3d9e; border-radius: 8px; background: rgba(92, 61, 158, 0.08);">
-  <strong>September 2026 — Paper accepted at IEEE TCAD!</strong><br>
-  Our paper, <em>Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</em>, has been accepted for publication in <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>. The paper will be available shortly after publication processing is complete.
+  <strong>September 2026 — Paper published in IEEE TCAD!</strong><br>
+  Our paper, <em>Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</em>, is now available in <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>. <a href="https://ieeexplore.ieee.org/document/11684822" target="_blank" rel="noopener">Read the paper on IEEE Xplore</a>.
 </div>
 
 ---
@@ -73,8 +73,8 @@ In *Proceedings of the IEEE/ACM International Conference on Computer-Aided Desig
 
 [6] **H. Geng**, S. Wang, M. Li, T. S. Pereira, M. Niemier, X. Hu.  
 *Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays.*  
-Accepted for publication in *IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)*, 2026.  
-*Paper available shortly.*
+*IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)*, 2026.  
+[[Paper]](https://ieeexplore.ieee.org/document/11684822)
 
 ---
 

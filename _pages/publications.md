@@ -35,8 +35,8 @@ In *Proceedings of the IEEE/ACM International Conference on Computer-Aided Desig
 
 [6] **H. Geng**, S. Wang, M. Li, T. S. Pereira, M. Niemier, X. Hu.  
 *Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays.*  
-Accepted for publication in *IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)*.  
-*Paper available shortly.*
+*IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)*, 2026.  
+[[Paper]](https://ieeexplore.ieee.org/document/11684822)
 
 [7] T. S. Pereira, R. Wang, I. Nwozo, **H. Geng**, X. Hu.  
 *Codebook-Based Acceleration for Ternary Language Model Inference.*  
