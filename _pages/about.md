@@ -22,7 +22,10 @@ My work targets key bottlenecks in modern secure systems, including memory ineff
 
 <div style="margin: 1.25rem 0 2rem; padding: 1.15rem 1.35rem; border-left: 5px solid #5c3d9e; border-radius: 8px; background: rgba(92, 61, 158, 0.08);">
   <strong>September 2026 — Paper published in IEEE TCAD!</strong><br>
-  Our paper, <em>Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</em>, is now available in <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>. <a href="https://ieeexplore.ieee.org/document/11684822" target="_blank" rel="noopener">Read the paper on IEEE Xplore</a>.
+  Our paper, <em>Towards Noise-Aware and Efficient Homomorphic Encryption on Crossbar Arrays</em>, is now available in <em>IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD)</em>.
+  <div style="margin-top: 0.85rem;">
+    <a href="https://ieeexplore.ieee.org/document/11684822" target="_blank" rel="noopener" style="display: inline-block; padding: 0.45rem 1.1rem; border-radius: 6px; background: #5c3d9e; color: #ffffff; font-weight: 600; font-size: 0.9rem; text-decoration: none;">📄 Read Paper on IEEE Xplore</a>
+  </div>
 </div>
 
 ---
