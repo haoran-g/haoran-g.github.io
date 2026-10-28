@@ -14,7 +14,7 @@ My research focuses on **computer architecture for efficient secure computing**,
 My work targets key bottlenecks in modern secure systems, including memory inefficiency and data movement overhead, and often leverages cross-layer design across architecture, system, and device levels to enable practical and high-performance secure computing in emerging applications such as cloud computing and privacy-preserving machine learning.
 
 📧 **Contact:** [hgeng@nd.edu](mailto:hgeng@nd.edu)  
-📄 **CV:** [Download my CV](/files/Haoran_Geng_CV.pdf)
+📄 **CV:** [Download my CV](/files/Haoran_Geng_CV.pdf?v=2026-10-28)
 
 ---
 
